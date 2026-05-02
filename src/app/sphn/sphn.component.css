@@ -1,0 +1,201 @@
+.toolbar {
+  width: 1400px;
+  margin: 0 auto 16px;
+}
+
+.print-button {
+  border: 1px solid #1f2937;
+  background: #1f2937;
+  color: #fff;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+.print-button:hover {
+  background: #111827;
+}
+
+.page {
+  width: 1400px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.trifold {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr 1fr 1fr;
+  border: 1px solid #000;
+}
+
+.panel {
+  padding: 12px;
+  min-height: 520px;
+  position: relative;
+}
+
+.panel:not(:last-child) {
+  border-right: 1px dashed #999;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  margin-bottom: 8px;
+  padding-bottom: 2px;
+}
+
+.field span {
+  font-size: 11px;
+}
+
+.approval {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.approval .sign {
+  border-bottom: 1px solid #000;
+  height: 40px;
+  margin: 10px 0;
+}
+
+.certificate {
+  text-align: center;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 50px;
+}
+
+.title p,
+.title h3,
+.title small {
+  margin: 0;
+}
+
+.cert-title {
+  margin: 10px 0;
+  font-size: 12px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  margin: 5px 0;
+}
+
+.underline {
+  border-bottom: 1px solid #000;
+  width: 70%;
+  text-align: left;
+}
+
+.grid {
+  display: grid;
+  gap: 5px;
+  margin: 5px 0;
+}
+
+.grid div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  border-bottom: 1px solid #000;
+}
+
+.two-column {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.three-column {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.footer {
+  margin-top: 15px;
+}
+
+.footer .sign {
+  border-bottom: 1px solid #000;
+  height: 40px;
+  margin: 10px auto;
+  width: 150px;
+}
+
+.serial {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.serial span {
+  color: red;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 1450px) {
+  .toolbar,
+  .page {
+    width: 100%;
+  }
+
+  .trifold {
+    overflow-x: auto;
+  }
+}
+
+@media print {
+  @page {
+    size: landscape;
+    margin: 0;
+  }
+
+  .no-print,
+  .toolbar,
+  .print-button {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+  }
+
+  .trifold {
+    grid-template-columns: 0.9fr 1fr 1fr 1fr;
+  }
+
+  .print-label,
+  .logo,
+  .sign {
+    visibility: hidden;
+  }
+
+  .field,
+  .row,
+  .grid div,
+  .underline,
+  .panel:not(:last-child) {
+    border-color: transparent;
+  }
+
+  .approval,
+  .certificate,
+  .footer,
+  .serial {
+    color: #000;
+  }
+}

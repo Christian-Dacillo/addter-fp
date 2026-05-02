@@ -1,0 +1,106 @@
+<div class="toolbar no-print">
+  <button type="button" class="print-button" (click)="print()">Print Permit</button>
+</div>
+
+<div class="page">
+
+  <div class="trifold">
+
+    <!-- LEFT PANEL -->
+    <div class="panel left-panel">
+      <div class="field"><span class="print-label">TYPE/CLASS OF EXAMINATION</span><b>{{ data.testText }}</b></div>
+      <div class="field"><span class="print-label">DATE TAKEN</span><b>{{ data.testText }}</b></div>
+      <div class="field"><span class="print-label">PLACE</span><b>{{ data.testText }}</b></div>
+      <div class="field"><span class="print-label">RATING</span><b>{{ data.testText }}</b></div>
+      <div class="field"><span class="print-label">PAID UNDER OR NO.</span><b>{{ data.testText }}</b></div>
+      <div class="field"><span class="print-label">AMOUNT</span><b>{{ data.testText }}</b></div>
+      <div class="field"><span class="print-label">DATE</span><b>{{ data.testText }}</b></div>
+
+      <div class="approval">
+        <p class="print-label">RECOMMENDING APPROVAL:</p>
+        <div class="sign"></div>
+        <p class="name">{{ data.testText }}</p>
+        <p class="position">{{ data.testText }}</p>
+      </div>
+    </div>
+
+    <!-- CENTER PANEL -->
+    <div class="panel cert-panel">
+      <ng-container *ngTemplateOutlet="certificate"></ng-container>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="panel cert-panel">
+      <ng-container *ngTemplateOutlet="certificate"></ng-container>
+    </div>
+
+    <div class="panel cert-panel">
+      <ng-container *ngTemplateOutlet="certificate"></ng-container>
+    </div>
+
+  </div>
+
+  <!-- CERTIFICATE TEMPLATE -->
+  <ng-template #certificate>
+    <div class="certificate">
+
+      <div class="header">
+        <img src="/ntc.png" class="logo">
+        <div class="title">
+          <p class="print-label">Republic of the Philippines</p>
+          <h3 class="print-label">National Telecommunications Commission</h3>
+          <small class="print-label">Quezon City</small>
+        </div>
+      </div>
+
+      <h4 class="cert-title print-label">FIRST CLASS RADIOTELEPHONE OPERATOR'S CERTIFICATE</h4>
+
+      <div class="row">
+        <span class="print-label">Registration No.</span>
+        <b>{{ data.testText }}</b>
+      </div>
+
+      <div class="row">
+        <span class="print-label">NAME:</span>
+        <b class="underline">{{ data.testText }}</b>
+      </div>
+
+      <div class="row">
+        <span class="print-label">ADDRESS:</span>
+        <b class="underline">{{ data.testText }}</b>
+      </div>
+
+      <div class="row">
+        <span class="print-label"></span>
+        <b class="underline">{{ data.testText }}</b>
+      </div>
+
+      <div class="grid">
+        <div><span class="print-label">BIRTHDATE</span><b>{{ data.testText }}</b></div>
+        <div><span class="print-label">CITIZENSHIP</span><b>{{ data.testText }}</b></div>
+      </div>
+
+      <div class="grid">
+        <div><span class="print-label">SEX</span><b>{{ data.testText }}</b></div>
+        <div><span class="print-label">HT (cm)</span><b>{{ data.testText }}</b></div>
+        <div><span class="print-label">WT (kg)</span><b>{{ data.testText }}</b></div>
+      </div>
+
+      <div class="grid">
+        <div><span class="print-label">DATE ISSUED</span><b>{{ data.testText }}</b></div>
+        <div><span class="print-label">VALID UNTIL</span><b>{{ data.testText }}</b></div>
+      </div>
+
+      <div class="footer">
+        <p class="print-label">FOR THE COMMISSION:</p>
+        <div class="sign"></div>
+        <p><b>{{ data.testText }}</b></p>
+        <p>{{ data.testText }}</p>
+      </div>
+
+      <div class="serial"><span class="print-label">SN- </span><span>{{ data.testText }}</span></div>
+
+    </div>
+  </ng-template>
+
+</div>

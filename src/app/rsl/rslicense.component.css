@@ -1,0 +1,361 @@
+.toolbar {
+  width: 8.5in;
+  margin: 16px auto 12px;
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  box-shadow: none;
+}
+
+.print-button {
+  border: none;
+  background: #1f2937;
+  color: #fff;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.print-button:hover {
+  background: #111827;
+}
+
+.print-button:focus,
+.print-button:active,
+.print-button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.print-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 24px;
+  background: #f3f4f6;
+}
+
+.license {
+  width: 8.5in;
+  min-height: 11in;
+  background: #fff;
+  padding: 0.55in 0.6in;
+  border: 1.5px solid #000;
+  box-shadow: 0 0 0.45in rgba(15, 23, 42, 0.16);
+  box-sizing: border-box;
+  font-family: "Times New Roman", serif;
+  font-size: 12pt;
+  line-height: 1.25;
+  color: #000;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.16in;
+}
+
+.logo {
+  width: 0.72in;
+  height: auto;
+}
+
+.header-text h3 {
+  margin: 0;
+  font-size: 15pt;
+}
+
+.header-text h4 {
+  margin: 0;
+  font-size: 11pt;
+}
+
+.header-text p {
+  margin: 0;
+  font-size: 10pt;
+}
+
+/* TITLE */
+.title {
+  position: relative;
+  text-align: center;
+  margin-top: 0.14in;
+  padding-top: 0.16in;
+}
+
+.title h2 {
+  margin: 0.08in 0;
+  letter-spacing: 0.04in;
+  font-size: 16pt;
+}
+
+.license-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.12in;
+  font-size: 10.5pt;
+}
+
+/* TEXT */
+.certify {
+  margin-top: 0.2in;
+  text-align: justify;
+}
+
+.fill-in {
+  display: inline-block;
+  border-bottom: 1px solid #000;
+  padding: 0 0.04in 0.01in;
+}
+
+/* DETAILS */
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 0.3in;
+  margin-top: 0.2in;
+}
+
+.details .left,
+.details .right {
+  flex: 1;
+  width: calc(50% - 0.15in);
+}
+
+.details .right {
+  text-align: left;
+}
+
+.details p {
+  margin: 0.03in 0;
+}
+
+/* TABLE */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.2in;
+  font-size: 10.5pt;
+}
+
+.table th,
+.table td {
+  border: 1px solid #000;
+  padding: 0.08in;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* EQUIPMENT */
+.equipment {
+  margin-top: 0.2in;
+  text-align: center;
+}
+
+.equipment h4 {
+  text-align: center;
+  margin: 0 0 0.08in;
+}
+
+.equipment p {
+  margin: 0.03in 0;
+}
+
+/* FOOTER */
+.license-footer {
+  margin-top: 20px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
+
+/* EFFECTIVITY TEXT */
+.effectivity {
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+.underline {
+  border-bottom: 1px solid black;
+  padding: 0 5px;
+}
+
+/* BOTTOM ROW */
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* OR DETAILS */
+.or-details {
+  font-size: 12px;
+}
+
+.or-details p {
+  margin: 2px 0;
+}
+
+.copies {
+  margin-top: 10px;
+}
+
+/* SIGNATURE */
+.signature {
+  text-align: center;
+  width: 250px;
+}
+
+.sign-space {
+  height: 40px;
+}
+
+.signature .name {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* NOTE */
+.note {
+  margin-top: 15px;
+  font-size: 11px;
+}
+
+/* LICENSE NUMBER */
+.license-no {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.license-no span {
+  color: blue;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* PRINT STYLE */
+@media (max-width: 900px) {
+  .toolbar,
+  .license {
+    width: min(100%, 8.5in);
+  }
+
+  .toolbar {
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
+  .print-container {
+    padding: 0 12px 20px;
+  }
+
+  .license {
+    min-height: auto;
+    padding: 0.45in 0.35in;
+  }
+
+  .license-info,
+  .details {
+    flex-direction: column;
+  }
+
+  .license-info {
+    position: static;
+    align-items: flex-start;
+    margin-top: 0.08in;
+  }
+
+  .license-info .right {
+    text-align: left;
+  }
+}
+
+@media print {
+  * {
+    color: black !important;
+    background: white !important;
+    box-shadow: none !important;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 12pt;
+  }
+
+  .toolbar,
+  .no-print {
+    display: none !important;
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .print-button {
+    display: none !important;
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+  
+  .print-container {
+    padding: 0;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    background: white !important;
+  }
+
+  .license {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0;
+    padding: 0.55in 0.6in;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .title {
+    position: relative !important;
+    padding-top: 0.16in !important;
+  }
+
+  .license-info {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-end !important;
+    justify-content: flex-end !important;
+    text-align: right !important;
+    width: auto !important;
+    margin-top: 0 !important;
+  }
+
+  .details {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+  }
+
+  .details .left,
+  .details .right {
+    flex: 0 0 calc(50% - 0.15in) !important;
+    width: calc(50% - 0.15in) !important;
+  }
+  
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}

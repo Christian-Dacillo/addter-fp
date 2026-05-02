@@ -1,0 +1,138 @@
+<div class="toolbar no-print">
+  <button type="button" class="print-button" (click)="print()">Print Permit</button>
+</div>
+
+
+<div class="license-container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">
+      <img src="/ntc.png" alt="NTC Logo">
+    </div>
+
+    <div class="header-text">
+      <p>Republic of the Philippines</p>
+      <h2>NATIONAL TELECOMMUNICATIONS COMMISSION</h2>
+      <p>Quezon City, Metro Manila</p>
+    </div>
+
+    <div class="photo">1x1 Picture</div>
+  </div>
+
+  <!-- TITLE BAR -->
+  <div class="title-bar">
+    <span>OPERATOR CERTIFICATES/STATION LICENSE FOR AMATEUR</span>
+    <span class="right">NON-TRANSFERABLE</span>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="content">
+
+    <!-- LEFT -->
+    <div class="left">
+      <p class="field-line underlined-field">
+        <strong>LICENSEE:</strong>
+        <input type="text" [(ngModel)]="formData.licensee" name="licensee" class="inline-input" placeholder="Enter licensee">
+      </p>
+      <div class="field-row">
+        <p class="field-line compact-field">
+          <strong>CALL-SIGN:</strong>
+          <input type="text" [(ngModel)]="formData.callSign" name="callSign" class="inline-input" placeholder="Enter call sign">
+        </p>
+        <p class="field-line compact-field">
+          <strong>CLASS:</strong>
+          <input type="text" [(ngModel)]="formData.licenseClass" name="licenseClass" class="inline-input" placeholder="Enter class">
+        </p>
+      </div>
+
+      <div class="equipment">
+        <p class="equipment-label"><strong>AUTHORIZED EQUIPMENT:</strong></p>
+        <div class="equip-box">
+          <div class="equip-item">
+            <input type="text" [(ngModel)]="formData.equipmentOne" name="equipmentOne" class="box-input" placeholder="Equipment 1">
+          </div>
+          <div class="equip-item">
+            <input type="text" [(ngModel)]="formData.equipmentTwo" name="equipmentTwo" class="box-input" placeholder="Equipment 2">
+          </div>
+          <div class="equip-item">
+            <input type="text" [(ngModel)]="formData.equipmentThree" name="equipmentThree" class="box-input" placeholder="Equipment 3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+      <p><strong>ADDRESS:</strong></p>
+      <textarea [(ngModel)]="formData.address" name="address" class="block-input" rows="2" placeholder="Enter address"></textarea>
+
+      <p><strong>STATION LOCATION:</strong></p>
+      <textarea [(ngModel)]="formData.stationLocation" name="stationLocation" class="block-input" rows="2" placeholder="Enter station location"></textarea>
+
+      <div class="signature">
+        <p>SIGNATURE OF LICENSEE</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- VALIDITY -->
+  <div class="validity">
+    <p class="field-line">
+      <strong>PERIOD OF VALIDITY</strong>
+      <span class="valid-until-group">
+        <span class="valid-until-label">VALID UNTIL:</span>
+        <input type="text" [(ngModel)]="formData.validUntil" name="validUntil" class="inline-input valid-until-input" placeholder="Enter validity date">
+      </span>
+    </p>
+  </div>
+
+  <!-- ISSUED -->
+  <div class="issued">
+    <div class="left">
+      <p class="field-line">
+        <strong>ISSUED ON:</strong>
+        <input type="text" [(ngModel)]="formData.issuedOn" name="issuedOn" class="inline-input" placeholder="Enter issue date">
+      </p>
+
+      <div class="receipt-box">
+        <div class="receipt-cell receipt-label">Official Receipt:</div>
+        <div class="receipt-cell">
+          <input type="text" [(ngModel)]="formData.officialReceipt" name="officialReceipt" class="inline-input" placeholder="Receipt no.">
+        </div>
+        <div class="receipt-cell receipt-label">Amount:</div>
+        <div class="receipt-cell">
+          <input type="text" [(ngModel)]="formData.amount" name="amount" class="inline-input" placeholder="Amount">
+        </div>
+        <div class="receipt-cell receipt-label">Date Paid:</div>
+        <div class="receipt-cell">
+          <input type="text" [(ngModel)]="formData.datePaid" name="datePaid" class="inline-input" placeholder="Date paid">
+        </div>
+        <div class="receipt-cell receipt-label">Cashier:</div>
+        <div class="receipt-cell">
+          <input type="text" [(ngModel)]="formData.cashier" name="cashier" class="inline-input" placeholder="Cashier">
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <p>NOTE: this is a computer generated No erasure Payment/ seal must be indicacted hereon this is not valid without signature/photo of licensee </p>
+      <p>By Authority of the Commissioner:</p>
+      <input type="text" [(ngModel)]="formData.signatoryLineone" name="signatoryLineone" class="signatory-input signatory-lineone" placeholder="Enter Reginal Director's name">
+      <input type="text" [(ngModel)]="formData.signatoryLinetwo" name="signatoryLinetwo" class="signatory-input signatory-linetwo" placeholder="Enter Position">
+      <div class="ntc-row">
+        <span>NTC No.</span>
+        <input type="text" [(ngModel)]="formData.ntcNumberOne" name="ntcNumberOne" class="ntc-input" placeholder="Input 1">
+        <input type="text" [(ngModel)]="formData.ntcNumberTwo" name="ntcNumberTwo" class="ntc-input" placeholder="Input 2">
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <input type="text" [(ngModel)]="formData.footerLineOne" name="footerLineOne" class="footer-input" placeholder="Footer line 1">
+    <input type="text" [(ngModel)]="formData.footerLineTwo" name="footerLineTwo" class="footer-input" placeholder="Footer line 2">
+  </div>
+
+</div>

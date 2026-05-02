@@ -1,0 +1,137 @@
+<div class="toolbar no-print">
+  <button type="button" class="edit-button" (click)="goToEdit()">Back</button>
+</div>
+
+<div class="print-container">
+  <div class="permit">
+
+    <div class="header">
+      <img class="header-logo static-el" src="/ntc.png" alt="NTC logo">
+      <div class="header-text static-el">
+        <h5>REPUBLIC OF THE PHILIPPINES</h5>
+        <h5>NATIONAL TELECOMMUNICATIONS COMMISSION</h5>
+        <h5>REGIONAL OFFICE NO. V</h5>
+        <p>Government Center Site, Brgy. Rawis, Legazpi City</p>
+        <p>Contact No: 0917-8507-751 (Globe) & 0919-0771-302 (Smart)</p>
+        <p>Email: ntc5@ntc.gov.ph / ntcv_legazpi@yahoo.com&nbsp; Website: https://www.ntc.gov.ph</p>
+      </div>
+      <img class="header-logo static-el" src="/bp.png" alt="BP logo">
+    </div>
+
+    <div class="issued">
+      <span class="static-el">Issued:&nbsp;</span><span class="data-val">{{ data.issuedDate }}</span>
+    </div>
+
+    <h2 class="title">
+      <span class="static-el">PERMIT TO PURCHASE RADIO TRANSMITTERS(s)/ TRANSCIEVER(s)<br></span>
+      <span class="static-el"><b>Permit No:&nbsp;</b></span><span class="data-val">{{ data.permitNo }}</span>
+    </h2>
+
+    <table class="form">
+      <tr>
+        <td class="label static-el">This is to certify that</td>
+        <td class="linee"><span class="data-val">{{ data.certifiedName }}</span></td>
+      </tr>
+      <tr>
+        <td class="label static-el">with postal address at</td>
+        <td class="linee"><span class="data-val">{{ data.postalAddress }}</span></td>
+      </tr>
+    </table>
+
+    <p class="static-el">
+      is hereby granted this PERMIT TO PURCHASE radio transmitter(s) / transceiver(s) describe as follows:
+    </p>
+
+    <table class="form">
+      <tr>
+        <td class="label static-el">Model:</td>
+        <td class="line"><span class="data-val">{{ data.model }}</span></td>
+      </tr>
+      <tr>
+        <td class="label static-el">No of Units:</td>
+        <td class="line"><span class="data-val">{{ data.noOfUnits }}</span></td>
+      </tr>
+      <tr>
+        <td class="label static-el">Frequency Range:</td>
+        <td class="line"><span class="data-val">{{ data.frequencyRange }}</span></td>
+      </tr>
+      <tr>
+        <td class="label static-el">Frequency Assignment:</td>
+        <td class="line"><span class="data-val">{{ data.frequencyAssignment }}</span></td>
+      </tr>
+      <tr>
+        <td class="label static-el">RF Power Output:</td>
+        <td class="line"><span class="data-val">{{ data.rfPowerOutput }}</span></td>
+      </tr>
+    </table>
+
+    <p class="paragraph static-el">
+      This permit shall be valid as a provisional permit to possess unless sooner or cancelled.
+    </p>
+    <br>
+
+    <div class="row gap">
+      <span class="static-el"><b>Valid Until:&nbsp;</b></span><span class="data-val">{{ data.validUntil }}</span>
+    </div>
+
+    <div class="signature-section">
+      <div class="section">
+        <div class="or-section">
+          <div class="or-left">
+            <p><span class="static-el">Official Receipt:&nbsp;</span><span class="data-val">{{ data.officialReceipt }}</span></p>
+            <p><span class="static-el">AMOUNT:&nbsp;</span><span class="data-val">{{ data.amount }}</span></p>
+            <p><span class="static-el">Date Paid:&nbsp;</span><span class="data-val">{{ data.datePaid }}</span></p>
+            <p><span class="static-el">Encoded By:&nbsp;</span><span class="data-val">{{ data.encodedBy }}</span></p>
+
+            <p class="static-el">Intended use of requirement</p>
+            <p style="text-indent: 20px;">
+              <ng-container *ngIf="data.intendedUse === 'For New Radio station'; else notNew">
+                <span class="data-val">(✓) For New Radio station</span>
+              </ng-container>
+              <ng-template #notNew><span class="static-el">( ) For New Radio station</span></ng-template>
+            </p>
+            <p style="text-indent: 20px;">
+              <ng-container *ngIf="data.intendedUse === 'Additional Requirement Equipment'; else notAdditional">
+                <span class="data-val">(✓) Additional Requirement Equipment</span>
+              </ng-container>
+              <ng-template #notAdditional><span class="static-el">( ) Additional Requirement Equipment</span></ng-template>
+            </p>
+            <p style="text-indent: 20px;">
+              <ng-container *ngIf="data.intendedUse === 'Change of Equipment'; else notChange">
+                <span class="data-val">(✓) Change of Equipment</span>
+              </ng-container>
+              <ng-template #notChange><span class="static-el">( ) Change of Equipment</span></ng-template>
+            </p>
+          </div>
+        </div>
+
+        <div class="signature static-el">
+          <p><b>ATTY. JUDY ANN N. BILANGEL</b></p>
+          <small>OIC Regional Director, RV</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTES -->
+    <div class="notes static-el">
+      <p><strong>Notes:</strong></p>
+      <ol>
+        <li>Issuance of this permit is without prejudice to any administrative case filed against this station or may be filled for previously commited violator</li>
+        <li>Failure to submit application for permit to possess, radio construction Permit(if applicable) and/or application for Radio Station License within the validity of this PERMIT shall cause its cancellation and/or recall of the proposed frequency(ies). (Applicstion for PERMIT TO POSSESS and RADIO STATION LICENSE shall be filled only to NTC with corresponding invoice/source of equipment)</li>
+        <li>The Above-described equipment shall not be installed, operated sold or transfer without prior authority from the National Telecommunications Commission.</li>
+        <li>Any person who shall install and or operate said equipment without the authorization from the NATIONAL TELECOMMUNICATIONS COMMISSION shall be subject to the penal provisons of ACT no. 3846, as amended by a fine of not more than P2,000 or by imprisonment of not more than two years for each and every offense or both in the discretion of the court.</li>
+        <li>Any firm, company, corporation or association failing or refusing to observe or violating any provion of this Act or any provison of the regulations prescribed by the NTC under this Act shall be punished by a fine of not more than P 5,000 for each and every offense.</li>
+        <li>Frequency assignment on sharing and strictly Non-Interference Basis(NIB).</li>
+        <li>This PERMIT is not valid without evidence of payment and the official dry seal of the office.</li>
+      </ol>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer static-el">
+      <p><strong>National Telecommunications Commission</strong></p>
+      <p>Central Office: NTC Building, BIR Road, East Triangle, Diliman, Quezon City</p>
+      <p>Email: ntc@ntc.gov.ph &nbsp; Website: https://www.ntc.gov.ph</p>
+    </div>
+
+  </div>
+</div>
