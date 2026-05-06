@@ -1,0 +1,155 @@
+<div class="edit-page">
+  <div class="edit-card">
+
+    <div class="edit-header-top">
+      <img class="edit-logo" src="/ntc.png" alt="NTC logo">
+      <div class="edit-header-text">
+        <p>National Telecommunications Commission</p>
+        <p>Regional Office No. 5</p>
+      </div>
+    </div>
+
+    <div class="edit-header-title">RADIO STATION LICENSE</div>
+
+    <div class="tab-bar">
+      <span class="tab active">General</span>
+    </div>
+
+    <form (ngSubmit)="submit()" #f="ngForm">
+      <div class="form-grid">
+
+        <div class="form-row">
+          <label>License No</label>
+          <input type="text" [(ngModel)]="form.licenseNo" name="licenseNo" placeholder="License No">
+        </div>
+
+        <div class="form-row">
+          <label>Date Issued</label>
+          <input type="text" [(ngModel)]="form.dateIssued" name="dateIssued" placeholder="MM/DD/YYYY">
+        </div>
+
+        <div class="form-row full-width">
+          <label>License Holder Name</label>
+          <input type="text" [(ngModel)]="form.holderName" name="holderName" placeholder="Name">
+        </div>
+
+        <div class="form-row">
+          <label>Station Type</label>
+          <input type="text" [(ngModel)]="form.stationType" name="stationType" placeholder="e.g. base radio station">
+        </div>
+
+        <div class="form-row full-width">
+          <label>Location</label>
+          <input type="text" [(ngModel)]="form.location" name="location" placeholder="Location">
+        </div>
+
+        <div class="form-row">
+          <label>E. Longitude</label>
+          <input type="text" [(ngModel)]="form.longitude" name="longitude" placeholder="Longitude">
+        </div>
+
+        <div class="form-row">
+          <label>N. Latitude</label>
+          <input type="text" [(ngModel)]="form.latitude" name="latitude" placeholder="Latitude">
+        </div>
+
+        <div class="form-row">
+          <label>Class of Station</label>
+          <input type="text" [(ngModel)]="form.classOfStation" name="classOfStation" placeholder="Class of Station">
+        </div>
+
+        <div class="form-row">
+          <label>Nature of Service</label>
+          <input type="text" [(ngModel)]="form.natureOfService" name="natureOfService" placeholder="Nature of Service">
+        </div>
+
+        <div class="form-row">
+          <label>Call Sign</label>
+          <input type="text" [(ngModel)]="form.callSign" name="callSign" placeholder="Call Sign">
+        </div>
+
+        <div class="form-row">
+          <label>Hours of Operation</label>
+          <input type="text" [(ngModel)]="form.hoursOfOperation" name="hoursOfOperation" placeholder="Hours of Operation">
+        </div>
+
+        <div class="form-row full-width">
+          <label>Points of Communication / Service Area</label>
+          <input type="text" [(ngModel)]="form.pointsOfCommunication" name="pointsOfCommunication" placeholder="Points of Communication">
+        </div>
+
+        <div class="form-row">
+          <label>Frequencies</label>
+          <input type="text" [(ngModel)]="form.frequencies" name="frequencies" placeholder="Frequencies">
+        </div>
+
+        <div class="form-row">
+          <label>Bandwidth</label>
+          <input type="text" [(ngModel)]="form.bandwidth" name="bandwidth" placeholder="Bandwidth">
+        </div>
+
+        <div class="form-row">
+          <label>Power (kW)</label>
+          <input type="text" [(ngModel)]="form.power" name="power" placeholder="Power">
+        </div>
+
+        <div class="form-row">
+          <label>Particulars of Antenna</label>
+          <input type="text" [(ngModel)]="form.antennaParticulars" name="antennaParticulars" placeholder="Antenna Particulars">
+        </div>
+
+        <div class="form-row">
+          <label>Remarks</label>
+          <input type="text" [(ngModel)]="form.remarks" name="remarks" placeholder="Remarks">
+        </div>
+
+        <div class="form-row">
+          <label>Equipment Make/Type</label>
+          <input type="text" [(ngModel)]="form.equipmentMakeType" name="equipmentMakeType" placeholder="Make/Type">
+        </div>
+
+        <div class="form-row">
+          <label>Equipment Range</label>
+          <input type="text" [(ngModel)]="form.equipmentRange" name="equipmentRange" placeholder="Range">
+        </div>
+
+        <div class="form-row">
+          <label>Serial Number</label>
+          <input type="text" [(ngModel)]="form.serialNumber" name="serialNumber" placeholder="Serial Number">
+        </div>
+
+        <div class="form-row">
+          <label>Effective From</label>
+          <input type="text" [(ngModel)]="form.effectiveFrom" name="effectiveFrom" placeholder="MM/YYYY">
+        </div>
+
+        <div class="form-row">
+          <label>Effective To</label>
+          <input type="text" [(ngModel)]="form.effectiveTo" name="effectiveTo" placeholder="MM/DD/YYYY">
+        </div>
+
+        <div class="form-row">
+          <label>OR No</label>
+          <input type="text" [(ngModel)]="form.orNo" name="orNo" placeholder="OR No">
+        </div>
+
+        <div class="form-row">
+          <label>Amount</label>
+          <input type="text" [(ngModel)]="form.amount" name="amount" placeholder="Amount">
+        </div>
+
+        <div class="form-row">
+          <label>Date Paid</label>
+          <input type="text" [(ngModel)]="form.datePaid" name="datePaid" placeholder="Date Paid">
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" (click)="cancel()">Cancel</button>
+        <button type="submit" class="btn-submit">Submit</button>
+      </div>
+
+    </form>
+  </div>
+</div>

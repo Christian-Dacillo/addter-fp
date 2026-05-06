@@ -1,4 +1,5 @@
 <div class="toolbar no-print">
+  <button type="button" class="edit-button" (click)="goToEdit()">Edit</button>
   <button type="button" class="print-button" (click)="print()">Print Permit</button>
 </div>
 
@@ -29,9 +30,8 @@
     <!-- PERMIT INFO -->
     <div class="permit-info">
       <div class="row">
-        <span>Permit No:</span>
-
-        <span class="issued">ISSUED:</span>
+        <span>Permit No: {{ data.permitNo }}</span>
+        <span class="issued">ISSUED: {{ data.issuedDate }}</span>
       </div>
 
       <h3 class="title">
@@ -43,28 +43,24 @@
         is/are registered with this Commission in favor of:
       </p>
 
-      <h4 class="company">
-      </h4>
+      <h4 class="company">{{ data.companyName }}</h4>
       <p class="applicant">APPLICANT</p>
     </div>
 
     <!-- DETAILS -->
-     <div class="info-section">
+    <div class="info-section">
 
-  <div class="info-row">
-    <span class="label">Address:</span>
-    <span class="value">
-      
-    </span>
-  </div>
+      <div class="info-row">
+        <span class="label">Address:</span>
+        <span class="value">{{ data.address }}</span>
+      </div>
 
-  <div class="info-row">
-    <span class="label">No Of Units:</span>
-    <span class="value">
-    </span>
-  </div>
+      <div class="info-row">
+        <span class="label">No Of Units:</span>
+        <span class="value">{{ data.noOfUnits }}</span>
+      </div>
 
-</div>
+    </div>
 
     <!-- RADIO TABLE -->
     <div class="radio-details">
@@ -78,83 +74,76 @@
             <td>EQUIPMENT</td>
             <td>SERIAL NO</td>
           </tr>
-       
-          <tr>
-            <td>*data from database*</td>
-            <td>*data from database*</td>
-            <td>*data from database*</td>
-            <td>*data from database*</td>
-          </tr>
-          <tr>
-            <td>*data from database*</td>
-            <td>*data from database*</td>
-            <td>*data from database*</td>
-            <td>*data from database*</td>
-          </tr>
         </thead>
+        <tbody>
+          <tr *ngFor="let row of data.radioRows">
+            <td>{{ row.classOfStation }}</td>
+            <td>{{ row.power }}</td>
+            <td>{{ row.equipment }}</td>
+            <td>{{ row.serialNo }}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
 
     <!-- LOWER DETAILS -->
     <div class="lower-section">
 
-  <div class="left-details">
+      <div class="left-details">
 
-    <div class="line-row">
-      <span class="label">Frequency Range:</span>
-      <span class="value"></span>
+        <div class="line-row">
+          <span class="label">Frequency Range:</span>
+          <span class="value">{{ data.frequencyRange }}</span>
+        </div>
+
+        <div class="line-row">
+          <span class="label">Source of Equipment:</span>
+          <span class="value">{{ data.sourceOfEquipment }}</span>
+        </div>
+
+        <div class="line-row">
+          <span class="label">Address of Source:</span>
+          <span class="value">{{ data.addressOfSource }}</span>
+        </div>
+
+        <div class="line-row">
+          <span class="label">Permit to Purchase/Registration No:</span>
+          <span class="value">{{ data.permitToPurchaseNo }}</span>
+        </div>
+
+        <div class="line-row">
+          <span class="label">Place of Storage:</span>
+          <span class="value">{{ data.placeOfStorage }}</span>
+        </div>
+
+        <div class="line-row">
+          <span class="label">Intended use of Equipment (class of Station):</span>
+          <span class="value strong">{{ data.intendedUse }}</span>
+        </div>
+
+      </div>
+
+      <div class="bottom-row">
+
+        <!-- LEFT RECEIPT -->
+        <div class="receipt">
+          <div><span>Official Receipt:</span> {{ data.officialReceipt }}</div>
+          <div><span>Date:</span> {{ data.datePaid }}</div>
+          <div><span>Amount:</span> {{ data.amount }}</div>
+          <div><span>Doc Stamp:</span> {{ data.docStamp }}</div>
+        </div>
+
+        <!-- RIGHT SIGNATURE -->
+        <div class="signature">
+          <p>By Authority of the Commissioner:</p>
+          <div class="signature-line"></div>
+          <p class="name">ATTY. JUDY ANN N. BILANGEL</p>
+          <p class="title">OIC-Regional Director, RV</p>
+        </div>
+
+      </div>
+
     </div>
-
-    <div class="line-row">
-      <span class="label">Source of Equipment:</span>
-      <span class="value"></span>
-    </div>
-
-    <div class="line-row">
-      <span class="label">Address of Source:</span>
-      <span class="value"></span>
-    </div>
-
-    <div class="line-row">
-      <span class="label">Permit to Purchase/Registration No:</span>
-      <span class="value"></span>
-    </div>
-
-    <div class="line-row">
-      <span class="label">Place of Storage:</span>
-      <span class="value"></span>
-    </div>
-
-    <div class="line-row">
-      <span class="label">Intended use of Equipment (class of Station):</span>
-      <span class="value strong"></span>
-    </div>
-
-  </div>
-
-  <div class="bottom-row">
-
-    <!-- LEFT RECEIPT -->
-    <div class="receipt">
-      <div><span>Official Receipt:</span> </div>
-      <div><span>Date:</span> </div>
-      <div><span>Amount:</span> </div>
-      <div><span>Doc Stamp:</span> </div>
-    </div>
-
-    <!-- RIGHT SIGNATURE -->
-    <div class="signature">
-      <p>By Authority of the Commissioner:</p>
-
-      <div class="signature-line"></div>
-
-      <p class="name">ATTY. JUDY ANN N. BILANGEL</p>
-      <p class="title">OIC-Regional Director, RV</p>
-    </div>
-
-  </div>
-
-</div>
 
     <!-- NOTES -->
     <div class="notes">

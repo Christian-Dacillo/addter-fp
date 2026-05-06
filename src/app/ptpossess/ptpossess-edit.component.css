@@ -1,0 +1,146 @@
+.edit-page {
+  min-height: 100vh;
+  background: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-card {
+  background: #dee5f1;
+  border: 1px solid #aaa;
+  width: 660px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.edit-header-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1a3a6b;
+  color: white;
+  padding: 10px 16px;
+}
+
+.edit-logo { width: 40px; height: 40px; object-fit: contain; }
+
+.edit-header-text p { margin: 0; font-size: 12px; line-height: 1.4; color: white; }
+
+.edit-header-title {
+  background: #1a3a6b;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 16px;
+  letter-spacing: 0.5px;
+}
+
+.tab-bar {
+  background: #c8d4e8;
+  padding: 6px 12px;
+  border-bottom: 1px solid #aaa;
+}
+
+.tab {
+  font-size: 13px;
+  font-weight: bold;
+  color: #1a3a5c;
+  padding: 4px 12px;
+  border: 1px solid #aaa;
+  background: white;
+  cursor: default;
+  border-radius: 4px;
+}
+
+form { padding: 20px; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+}
+
+.form-row { display: flex; flex-direction: column; gap: 3px; }
+.form-row.full-width { grid-column: 1 / -1; }
+
+label { font-size: 12px; color: #333; font-weight: bold; }
+
+input {
+  border: 1px solid #aaa;
+  padding: 5px 8px;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+  background: white;
+}
+
+input:focus { outline: 2px solid #1a3a5c; }
+
+.section-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #1a3a5c;
+  margin: 14px 0 6px;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 4px;
+}
+
+.radio-table { width: 100%; border-collapse: collapse; }
+
+.radio-table th {
+  background: #d0dce8;
+  font-size: 11px;
+  padding: 5px 6px;
+  text-align: left;
+  border: 1px solid #aaa;
+}
+
+.radio-table td { border: 1px solid #aaa; padding: 2px 4px; }
+
+.radio-table td input {
+  border: none;
+  padding: 4px 6px;
+  font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.radio-table td input:focus { outline: 2px solid #1a3a5c; }
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+  background: #c8d4e8;
+  padding: 12px 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: -20px;
+}
+
+.btn-cancel {
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.btn-cancel:hover { background: #a93226; }
+
+.btn-submit {
+  background: #1a3a5c;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.btn-submit:hover { background: #122840; }

@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FRTGDataService, FRTGData } from './frtg-data.service';
 
 @Component({
   selector: 'app-frtg',
@@ -9,13 +11,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./frtg.component.css']
 })
 export class FRTGComponent {
+  data: FRTGData;
 
-  // SAMPLE TEST DATA (you can replace later)
-  data = {
-    testText: 'TEST'
-  };
+  constructor(private dataService: FRTGDataService, private router: Router) {
+    this.data = this.dataService.data;
+  }
 
   print() {
     window.print();
+  }
+
+  goToEdit() {
+    this.router.navigate(['/frtg-edit']);
   }
 }

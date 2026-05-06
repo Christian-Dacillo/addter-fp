@@ -1,0 +1,136 @@
+<div class="edit-page">
+  <div class="edit-card">
+
+    <div class="edit-header-top">
+      <img class="edit-logo" src="/ntc.png" alt="NTC logo">
+      <div class="edit-header-text">
+        <p>National Telecommunications Commission</p>
+        <p>Regional Office No. 5</p>
+      </div>
+    </div>
+
+    <div class="edit-header-title">
+      PERMIT TO POSSESS RADIO TRANSMITTER(S) / TRANSCEIVER(S)
+    </div>
+
+    <div class="tab-bar">
+      <span class="tab active">General</span>
+    </div>
+
+    <form (ngSubmit)="submit()" #f="ngForm">
+      <div class="form-grid">
+
+        <div class="form-row">
+          <label>Permit No</label>
+          <input type="text" [(ngModel)]="form.permitNo" name="permitNo" placeholder="Permit No">
+        </div>
+
+        <div class="form-row">
+          <label>Issued Date</label>
+          <input type="text" [(ngModel)]="form.issuedDate" name="issuedDate" placeholder="Date Issued">
+        </div>
+
+        <div class="form-row full-width">
+          <label>Company / Applicant Name</label>
+          <input type="text" [(ngModel)]="form.companyName" name="companyName" placeholder="Company / Applicant Name">
+        </div>
+
+        <div class="form-row full-width">
+          <label>Address</label>
+          <input type="text" [(ngModel)]="form.address" name="address" placeholder="Address">
+        </div>
+
+        <div class="form-row">
+          <label>No of Units</label>
+          <input type="text" [(ngModel)]="form.noOfUnits" name="noOfUnits" placeholder="No of Units">
+        </div>
+
+      </div>
+
+      <div class="section-title">Radio Details</div>
+      <table class="radio-table">
+        <thead>
+          <tr>
+            <th>Class of Station</th>
+            <th>Power (kW)</th>
+            <th>Equipment</th>
+            <th>Serial No</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of form.radioRows; let i = index">
+            <td><input type="text" [(ngModel)]="row.classOfStation" [name]="'class_'+i" placeholder="Class"></td>
+            <td><input type="text" [(ngModel)]="row.power" [name]="'power_'+i" placeholder="Power"></td>
+            <td><input type="text" [(ngModel)]="row.equipment" [name]="'equip_'+i" placeholder="Equipment"></td>
+            <td><input type="text" [(ngModel)]="row.serialNo" [name]="'serial_'+i" placeholder="Serial No"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="form-grid" style="margin-top:12px">
+
+        <div class="form-row full-width">
+          <label>Frequency Range</label>
+          <input type="text" [(ngModel)]="form.frequencyRange" name="frequencyRange" placeholder="Frequency Range">
+        </div>
+
+        <div class="form-row full-width">
+          <label>Source of Equipment</label>
+          <input type="text" [(ngModel)]="form.sourceOfEquipment" name="sourceOfEquipment" placeholder="Source of Equipment">
+        </div>
+
+        <div class="form-row full-width">
+          <label>Address of Source</label>
+          <input type="text" [(ngModel)]="form.addressOfSource" name="addressOfSource" placeholder="Address of Source">
+        </div>
+
+        <div class="form-row full-width">
+          <label>Permit to Purchase / Registration No</label>
+          <input type="text" [(ngModel)]="form.permitToPurchaseNo" name="permitToPurchaseNo" placeholder="Permit to Purchase / Reg No">
+        </div>
+
+        <div class="form-row full-width">
+          <label>Place of Storage</label>
+          <input type="text" [(ngModel)]="form.placeOfStorage" name="placeOfStorage" placeholder="Place of Storage">
+        </div>
+
+        <div class="form-row full-width">
+          <label>Intended Use of Equipment (Class of Station)</label>
+          <input type="text" [(ngModel)]="form.intendedUse" name="intendedUse" placeholder="Intended Use">
+        </div>
+
+        <div class="form-row">
+          <label>Official Receipt</label>
+          <input type="text" [(ngModel)]="form.officialReceipt" name="officialReceipt" placeholder="Official Receipt">
+        </div>
+
+        <div class="form-row">
+          <label>Date Paid</label>
+          <input type="text" [(ngModel)]="form.datePaid" name="datePaid" placeholder="Date Paid">
+        </div>
+
+        <div class="form-row">
+          <label>Amount</label>
+          <input type="text" [(ngModel)]="form.amount" name="amount" placeholder="Amount">
+        </div>
+
+        <div class="form-row">
+          <label>Doc Stamp</label>
+          <input type="text" [(ngModel)]="form.docStamp" name="docStamp" placeholder="Doc Stamp">
+        </div>
+
+        <div class="form-row">
+          <label>Encoder</label>
+          <input type="text" [(ngModel)]="form.encoder" name="encoder" placeholder="Encoder">
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" (click)="cancel()">Cancel</button>
+        <button type="submit" class="btn-submit">Submit</button>
+      </div>
+
+    </form>
+  </div>
+</div>

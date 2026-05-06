@@ -1,9 +1,9 @@
 <div class="toolbar no-print">
+  <button type="button" class="edit-button" (click)="goToEdit()">Edit</button>
   <button type="button" class="print-button" (click)="print()">Print Permit</button>
 </div>
 
 <div class="print-container">
-
   <div class="permit">
 
     <div class="header">
@@ -20,28 +20,27 @@
     </div>
 
     <h2 class="title">MOBILE PHONE RETAILER's PERMIT</h2>
-<br>
+
     <div class="row gap">
-      <span><b>Permit No:</b> </span>
-      <span><b>Date Issued:</b> </span>
-    </div>  
-<br>
-<br>
-    <div class="row full">
-      <span><b>Name of Applicant:</b> </span>
+      <span><b>Permit No:</b> {{ data.permitNo }}</span>
+      <span><b>Date Issued:</b> {{ data.dateIssued }}</span>
     </div>
 
     <div class="row full">
-      <span><b>Business Address:</b> </span>
+      <span><b>Name of Applicant:</b> {{ data.applicantName }}</span>
+    </div>
+
+    <div class="row full">
+      <span><b>Business Address:</b> {{ data.businessAddress }}</span>
     </div>
 
     <div class="row gap">
-      <span><b>Telephone:</b> </span>
-      <span><b>Fax No:</b> </span>
+      <span><b>Telephone:</b> {{ data.telephone }}</span>
+      <span><b>Fax No:</b> {{ data.faxNo }}</span>
     </div>
 
     <div class="row">
-      <span><b>SEC/DTI Registration No:</b> </span>
+      <span><b>SEC/DTI Registration No:</b> {{ data.secDtiRegNo }}</span>
     </div>
 
     <p class="paragraph">
@@ -50,60 +49,59 @@
       Retailer's Permit to engage in the purchase, sale, lease and/or retail of mobile phones.
     </p>
     <p>
-      The grantee of this PERMIT shall be subjected to the provisions of NTC Memo 
+      The grantee of this PERMIT shall be subjected to the provisions of NTC Memo
       Circular No. 08-08-2004, and the other rules and regulations, which may be promolugated
-      thereafter by this Commission. 
+      thereafter by this Commission.
     </p>
-<br>
+
     <div class="row gap">
-      <span><b>This permit is valid from:</b> </span>
-      <span><b>To:</b></span>
+      <span><b>This permit is valid from:</b> {{ data.validFrom }}</span>
+      <span><b>To:</b> {{ data.validTo }}</span>
     </div>
 
-    <div class="signature-section"> <!-- New wrapper -->
-  <div class="section">
-    <div class="or-section">
-      <!-- LEFT SIDE -->
-      <div class="or-left">
-        <p><strong>O R</strong> &nbsp;&nbsp; No: ____________</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  Date Paid: __________________</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  AMOUNT: __________________</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  Doc Stamp Tax: </p>
+    <div class="signature-section">
+      <div class="section">
+        <div class="or-section">
+          <div class="or-left">
+            <p><strong>O R</strong> &nbsp;&nbsp; No: {{ data.orNo }}</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date Paid: {{ data.datePaid }}</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AMOUNT: {{ data.amount }}</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Doc Stamp Tax: {{ data.docStampTax }}</p>
+          </div>
+        </div>
+
+        <div class="signature">
+          <p><b>ATTY. JUDY ANN N. BILANGEL</b></p>
+          <small>OIC Regional Director, RV</small>
+        </div>
       </div>
     </div>
-    
-    <div class="signature">
-      <p><b>ATTY. JUDY ANN N. BILANGEL</b></p>
-      <small>OIC Regional Director, RV</small>
+
+    <!-- NOTES -->
+    <div class="notes">
+      <p><strong>Notes:</strong></p>
+      <ol>
+        <li>
+          The dealer is subject to ocular inspection at any reasonable time by the authorized NTC representative(s).
+          Any violations found at the time of inspection will cause this Commission to charge the dealer for administrative case.
+        </li>
+        <li>
+          All mobile phones distributed by the dealer shall be NTC type approved with genuine type approval labels/stickers
+          pursuant to the provisions of NTC MC No. 02-01-2001.
+        </li>
+        <li>
+          This permit is not valid without payment of the prescribed fees and official dry seal of this Commission.
+        </li>
+      </ol>
+      <p style="margin-top: 8px;">Encoder: {{ data.encoder }}</p>
     </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p><strong>National Telecommunications Commission</strong></p>
+      <p>Central Office: NTC Building, BIR Road, East Triangle, Diliman, Quezon City</p>
+      <p>Email: ntc@ntc.gov.ph &nbsp; Website: https://www.ntc.gov.ph</p>
+    </div>
+
   </div>
-</div>
-
-  <!-- NOTES -->
-  <div class="notes">
-    <p><strong>Notes:</strong></p>
-    <ol>
-      <li>
-        The dealer is subject to ocular inspection at any reasonable time by the authorized NTC representative(s). 
-        Any violations found at the time of inspection will cause this Commission to charge the dealer for administrative case.
-      </li>
-      <li>
-        All mobile phones distributed by the dealer shall be NTC type approved with genuine type approval labels/stickers 
-        pursuant to the provisions of NTC MC No. 02-01-2001.
-      </li>
-      <li>
-        This permit is not valid without payment of the prescribed fees and official dry seal of this Commission.
-      </li>
-    </ol>
-
-    <p style="margin-top: 20px;">Encoder: __________________</p>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    <p><strong>National Telecommunications Commission</strong></p>
-    <p>Central Office: NTC Building, BIR Road, East Triangle, Diliman, Quezon City</p>
-    <p>Email: ntc@ntc.gov.ph &nbsp; Website: https://www.ntc.gov.ph</p>
-  </div>
-
 </div>

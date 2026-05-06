@@ -24,7 +24,7 @@ export class PTPurchaseEditComponent {
   }
 
   cancel() {
-    this.router.navigate(['/ptpurchase']);
+    this.form = { ...this.dataService.data };
   }
 
   printPermit() {

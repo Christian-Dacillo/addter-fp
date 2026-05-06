@@ -104,10 +104,16 @@
   margin: 5px 0;
 }
 
+.grid.three-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .grid div {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 2px;
   border-bottom: 1px solid #000;
+  padding-bottom: 2px;
 }
 
 /* FOOTER */
@@ -197,8 +203,23 @@
   font-size: 14px;
   font-family: Arial, sans-serif;
   cursor: pointer;
+  border-radius: 6px;
 }
 
 .print-button:hover {
   background: #111827;
 }
+
+.edit-button {
+  border: 1px solid #1a3a5c;
+  background: #1a3a5c;
+  color: #fff;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  margin-right: 8px;
+  border-radius: 6px;
+}
+
+.edit-button:hover { background: #122840; }

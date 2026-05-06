@@ -18,17 +18,26 @@ export class AppComponent {
   isPrintRoute(): boolean {
     return [
       '/retailer-permit-print',
+      '/retailer-edit',
       '/dealer-permit',
+      '/dealer-edit',
       '/service-center-permit',
       '/ptpurchase',
       '/ptpurchase-edit',
       '/ptpossess',
+      '/ptpossess-edit',
       '/rsl',
+      '/rsl-edit',
       '/amateur',
+      '/amateur-edit',
       '/fphn',
+      '/fphn-edit',
       '/sphn',
+      '/sphn-edit',
       '/tphn',
-      '/frtg'
+      '/tphn-edit',
+      '/frtg',
+      '/frtg-edit'
     ].includes(this.router.url);
   }
 }

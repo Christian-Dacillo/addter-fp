@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FphnDataService, FphnData } from './fphn-data.service';
 
 @Component({
   selector: 'app-fphn',
@@ -9,13 +11,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./fphn.component.css']
 })
 export class FphnComponent {
+  data: FphnData;
 
-  // SAMPLE TEST DATA (you can replace later)
-  data = {
-    testText: 'TEST'
-  };
+  constructor(private dataService: FphnDataService, private router: Router) {
+    this.data = this.dataService.data;
+  }
 
   print() {
     window.print();
+  }
+
+  goToEdit() {
+    this.router.navigate(['/fphn-edit']);
   }
 }

@@ -60,9 +60,8 @@
 }
 
 .toolbar {
-  position: fixed;
-  top: 16px;
-  right: 24px;
+  width: 210mm;
+  margin: 12px auto 8px;
   display: flex;
   justify-content: flex-end;
   z-index: 1000;
@@ -87,17 +86,32 @@
   font-size: 14px;
   font-family: Arial, sans-serif;
   cursor: pointer;
+  border-radius: 6px;
 }
 
 .print-button:hover {
   background: #111827;
 }
 
+.edit-button {
+  border: 1px solid #1a3a5c;
+  background: #1a3a5c;
+  color: #fff;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  margin-right: 8px;
+  border-radius: 6px;
+}
+
+.edit-button:hover { background: #122840; }
+
 .print-container {
   padding: 0;
   width: 210mm;
   min-height: 297mm;
-  margin: 72px auto 0;
+  margin: 0 auto;
   box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
   background: white;
 }
@@ -176,6 +190,9 @@ table{
 
 td{
   border:1px solid rgb(0, 0, 0);
+  padding: 4px 6px;
+  min-height: 20px;
+  height: 20px;
 }
 
 .text{

@@ -1,4 +1,5 @@
 <div class="toolbar no-print">
+  <button type="button" class="edit-button" (click)="goToEdit()">Edit</button>
   <button type="button" class="print-button" (click)="print()">Print Permit</button>
 </div>
 
@@ -8,19 +9,19 @@
 
     <!-- LEFT PANEL -->
     <div class="panel left-panel">
-      <div class="field"><span class="print-label">TYPE/CLASS OF EXAMINATION</span><b>{{ data.testText }}</b></div>
-      <div class="field"><span class="print-label">DATE TAKEN</span><b>{{ data.testText }}</b></div>
-      <div class="field"><span class="print-label">PLACE</span><b>{{ data.testText }}</b></div>
-      <div class="field"><span class="print-label">RATING</span><b>{{ data.testText }}</b></div>
-      <div class="field"><span class="print-label">PAID UNDER O.R NO.</span><b>{{ data.testText }}</b></div>
-      <div class="field"><span class="print-label">AMOUNT</span><b>{{ data.testText }}</b></div>
-      <div class="field"><span class="print-label">DATE</span><b>{{ data.testText }}</b></div>
+      <div class="field"><span class="print-label">TYPE/CLASS OF EXAMINATION</span><b>{{ data.typeClass }}</b></div>
+      <div class="field"><span class="print-label">DATE TAKEN</span><b>{{ data.dateTaken }}</b></div>
+      <div class="field"><span class="print-label">PLACE</span><b>{{ data.place }}</b></div>
+      <div class="field"><span class="print-label">RATING</span><b>{{ data.rating }}</b></div>
+      <div class="field"><span class="print-label">PAID UNDER O.R NO.</span><b>{{ data.orNo }}</b></div>
+      <div class="field"><span class="print-label">AMOUNT</span><b>{{ data.amount }}</b></div>
+      <div class="field"><span class="print-label">DATE</span><b>{{ data.datePaid }}</b></div>
 
       <div class="approval">
         <p class="print-label">RECOMMENDING APPROVAL:</p>
         <div class="sign"></div>
-        <p class="name">{{ data.testText }}</p>
-        <p class="position">{{ data.testText }}</p>
+        <p class="name">{{ data.recommendingName }}</p>
+        <p class="position">{{ data.recommendingPosition }}</p>
       </div>
     </div>
 
@@ -40,64 +41,67 @@
   </div>
 
   <!-- CERTIFICATE TEMPLATE -->
- <ng-template #certificate>
-  <div class="certificate">
+  <ng-template #certificate>
+    <div class="certificate">
 
-    <div class="header">
-      <img src="/ntc.png" alt="logo" class="logo">
-
-      <div class="title">
-        <p>Republic of the Philippines</p>
-        <p>Department of Transportation</p>
-        <p>and Communications Technology</p>
-        <h4>National Telecommunications Commission</h4>
-        <small>Quezon City</small>
+      <div class="header">
+        <img src="/ntc.png" alt="logo" class="logo">
+        <div class="title">
+          <p>Republic of the Philippines</p>
+          <p>Department of Transportation</p>
+          <p>and Communications Technology</p>
+          <h4>National Telecommunications Commission</h4>
+          <small>Quezon City</small>
+        </div>
       </div>
-    </div>
 
-    <div class="cert-title">
-      FIRST CLASS RADIOTELEGRAPH OPERATOR'S CERTIFICATE
-    </div>
-
+      <div class="cert-title">
+        FIRST CLASS RADIOTELEGRAPH OPERATOR'S CERTIFICATE
+      </div>
 
       <div class="row">
         <span class="print-label">Registration No.</span>
-        <b>{{ data.testText }}</b>
+        <b>{{ data.registrationNo }}</b>
       </div>
 
       <div class="row">
         <span class="print-label">NAME:</span>
-        <b class="underline">{{ data.testText }}</b>
+        <b class="underline">{{ data.name }}</b>
       </div>
 
       <div class="row">
         <span class="print-label">ADDRESS:</span>
-        <b class="underline">{{ data.testText }}</b>
+        <b class="underline">{{ data.address }}</b>
       </div>
 
       <div class="row">
         <span class="print-label"></span>
-        <b class="underline">{{ data.testText }}</b>
+        <b class="underline">{{ data.address2 }}</b>
       </div>
+
       <div class="grid two-column">
-        <div><span class="print-label">BIRTHDATE (MO/DAY/YR)</span><b class="birthdate-value">{{ data.testText }}</b></div>
-        <div><span class="print-label">CITIZENSHIP</span><b>{{ data.testText }}</b></div>
+        <div><span class="print-label">BIRTHDATE</span><br><b class="birthdate-value">{{ data.birthdate }}</b></div>
+        <div><span class="print-label">CITIZENSHIP</span><br><b>{{ data.citizenship }}</b></div>
       </div>
+
       <div class="grid three-column">
-        <div><span class="print-label">SEX</span><b>{{ data.testText }}</b></div>
-        <div><span class="print-label">HT (cm)</span><b>{{ data.testText }}</b></div>
-        <div><span class="print-label">WT (kg)</span><b>{{ data.testText }}</b></div>
+        <div><span class="print-label">SEX</span><br><b>{{ data.sex }}</b></div>
+        <div><span class="print-label">HT (cm)</span><br><b>{{ data.height }}</b></div>
+        <div><span class="print-label">WT (kg)</span><br><b>{{ data.weight }}</b></div>
       </div>
+
       <div class="grid two-column">
-        <div><span class="print-label">DATE ISSUED</span><b>{{ data.testText }}</b></div>
-        <div><span class="print-label">VALID UNTIL</span><b>{{ data.testText }}</b></div>
+        <div><span class="print-label">DATE ISSUED</span><br><b>{{ data.dateIssued }}</b></div>
+        <div><span class="print-label">VALID UNTIL</span><br><b>{{ data.validUntil }}</b></div>
       </div>
+
       <div class="footer">
         <p class="print-label">FOR THE COMMISSION:</p>
         <div class="sign"></div>
-        <p class="signatory"><b>{{ data.testText }}</b></p>
+        <p class="signatory"><b>{{ data.signatory }}</b></p>
       </div>
-      <div class="serial"><span class="print-label">SN- </span><span>{{ data.testText }}</span></div>
+
+      <div class="serial"><span class="print-label">SN- </span><span>{{ data.serialNo }}</span></div>
 
     </div>
   </ng-template>

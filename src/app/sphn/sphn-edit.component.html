@@ -1,0 +1,151 @@
+<div class="edit-page">
+  <div class="edit-card">
+
+    <div class="edit-header-top">
+      <img class="edit-logo" src="/ntc.png" alt="NTC logo">
+      <div class="edit-header-text">
+        <p>National Telecommunications Commission</p>
+        <p>Regional Office No. 5</p>
+      </div>
+    </div>
+
+    <div class="edit-header-title">
+      SECOND CLASS RADIOTELEPHONE OPERATOR'S CERTIFICATE
+    </div>
+
+    <div class="tab-bar">
+      <span class="tab active">General</span>
+    </div>
+
+    <form (ngSubmit)="submit()" #f="ngForm">
+      <div class="form-grid">
+
+        <div class="form-row">
+          <label>Registration No</label>
+          <input type="text" [(ngModel)]="form.registrationNo" name="registrationNo" placeholder="Registration No">
+        </div>
+
+        <div class="form-row">
+          <label>Name</label>
+          <input type="text" [(ngModel)]="form.name" name="name" placeholder="Full Name">
+        </div>
+
+        <div class="form-row full-width">
+          <label>Address Line 1</label>
+          <input type="text" [(ngModel)]="form.address" name="address" placeholder="Address">
+        </div>
+
+        <div class="form-row full-width">
+          <label>Address Line 2</label>
+          <input type="text" [(ngModel)]="form.address2" name="address2" placeholder="Address (continued)">
+        </div>
+
+        <div class="form-row">
+          <label>Birthdate (MO/DAY/YR)</label>
+          <input type="text" [(ngModel)]="form.birthdate" name="birthdate" placeholder="MM/DD/YYYY">
+        </div>
+
+        <div class="form-row">
+          <label>Citizenship</label>
+          <input type="text" [(ngModel)]="form.citizenship" name="citizenship" placeholder="Citizenship">
+        </div>
+
+        <div class="form-row">
+          <label>Sex</label>
+          <select [(ngModel)]="form.sex" name="sex">
+            <option value="">-- Select --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>Height (cm)</label>
+          <input type="text" [(ngModel)]="form.height" name="height" placeholder="Height">
+        </div>
+
+        <div class="form-row">
+          <label>Weight (kg)</label>
+          <input type="text" [(ngModel)]="form.weight" name="weight" placeholder="Weight">
+        </div>
+
+        <div class="form-row">
+          <label>Date Issued</label>
+          <input type="text" [(ngModel)]="form.dateIssued" name="dateIssued" placeholder="Date Issued">
+        </div>
+
+        <div class="form-row">
+          <label>Valid Until</label>
+          <input type="text" [(ngModel)]="form.validUntil" name="validUntil" placeholder="Valid Until">
+        </div>
+
+        <div class="form-row full-width">
+          <label>Type / Class of Examination</label>
+          <input type="text" [(ngModel)]="form.typeClass" name="typeClass" placeholder="Type/Class">
+        </div>
+
+        <div class="form-row">
+          <label>Date Taken</label>
+          <input type="text" [(ngModel)]="form.dateTaken" name="dateTaken" placeholder="Date Taken">
+        </div>
+
+        <div class="form-row">
+          <label>Place</label>
+          <input type="text" [(ngModel)]="form.place" name="place" placeholder="Place">
+        </div>
+
+        <div class="form-row">
+          <label>Rating</label>
+          <input type="text" [(ngModel)]="form.rating" name="rating" placeholder="Rating">
+        </div>
+
+        <div class="form-row">
+          <label>Paid Under O.R No</label>
+          <input type="text" [(ngModel)]="form.orNo" name="orNo" placeholder="O.R No">
+        </div>
+
+        <div class="form-row">
+          <label>Amount</label>
+          <input type="text" [(ngModel)]="form.amount" name="amount" placeholder="Amount">
+        </div>
+
+        <div class="form-row">
+          <label>Date Paid</label>
+          <input type="text" [(ngModel)]="form.datePaid" name="datePaid" placeholder="Date Paid">
+        </div>
+
+        <div class="form-row">
+          <label>Recommending Approval (Name)</label>
+          <input type="text" [(ngModel)]="form.recommendingName" name="recommendingName" placeholder="Name">
+        </div>
+
+        <div class="form-row">
+          <label>Recommending Approval (Position)</label>
+          <input type="text" [(ngModel)]="form.recommendingPosition" name="recommendingPosition" placeholder="Position">
+        </div>
+
+        <div class="form-row">
+          <label>For the Commission (Signatory)</label>
+          <input type="text" [(ngModel)]="form.signatory" name="signatory" placeholder="Signatory Name">
+        </div>
+
+        <div class="form-row">
+          <label>Signatory Position</label>
+          <input type="text" [(ngModel)]="form.signatoryPosition" name="signatoryPosition" placeholder="Position">
+        </div>
+
+        <div class="form-row">
+          <label>Serial No</label>
+          <input type="text" [(ngModel)]="form.serialNo" name="serialNo" placeholder="Serial No">
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" (click)="cancel()">Cancel</button>
+        <button type="submit" class="btn-submit">Submit</button>
+      </div>
+
+    </form>
+  </div>
+</div>

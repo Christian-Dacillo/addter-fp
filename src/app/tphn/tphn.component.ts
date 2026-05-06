@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { TphnDataService, TphnData } from './tphn-data.service';
 
 @Component({
   selector: 'app-tphn',
@@ -9,13 +11,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./tphn.component.css']
 })
 export class TphnComponent {
+  data: TphnData;
 
-  // SAMPLE TEST DATA (you can replace later)
-  data = {
-    testText: 'TEST'
-  };
+  constructor(private dataService: TphnDataService, private router: Router) {
+    this.data = this.dataService.data;
+  }
 
   print() {
     window.print();
+  }
+
+  goToEdit() {
+    this.router.navigate(['/tphn-edit']);
   }
 }

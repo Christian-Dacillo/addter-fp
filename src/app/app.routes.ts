@@ -1,28 +1,46 @@
 import { Routes } from '@angular/router';
 import { DealerPermitComponent } from './dealer-permit/dealer-permit.component';
+import { DealerEditComponent } from './dealer-permit/dealer-edit.component';
 import { RetailerPermitComponent } from './retailer-permit-print/retailer-permit-print.component';
+import { RetailerEditComponent } from './retailer-permit-print/retailer-edit.component';
 import { ServiceCenterPermitComponent } from './service-center-permit/service-center-permit.component';
 import { PTPurchasePermitComponent } from './ptpurchase/ptpurchase-permit-component';
 import { PTPurchaseEditComponent } from './ptpurchase/ptpurchase-edit.component';
 import { PTPossessPermitComponent } from './ptpossess/ptpossess-permit-component';
+import { PTPossessEditComponent } from './ptpossess/ptpossess-edit.component';
 import { RslicenseComponent } from './rsl/rslicense.component';
+import { RslEditComponent } from './rsl/rsl-edit.component';
 import { AmateurComponent } from './amateur/amateur.component';
+import { AmateurEditComponent } from './amateur/amateur-edit.component';
 import { FphnComponent } from './fphn/fphn.component';
+import { FphnEditComponent } from './fphn/fphn-edit.component';
 import { SphnComponent } from './sphn/sphn.component';
+import { SphnEditComponent } from './sphn/sphn-edit.component';
 import { TphnComponent } from './tphn/tphn.component';
+import { TphnEditComponent } from './tphn/tphn-edit.component';
 import { FRTGComponent } from './frtg/frtg.component';
+import { FRTGEditComponent } from './frtg/frtg-edit.component';
 
 export const routes: Routes = [
   { path: 'retailer-permit-print', component: RetailerPermitComponent },
+  { path: 'retailer-edit', component: RetailerEditComponent },
   { path: 'dealer-permit', component: DealerPermitComponent },
+  { path: 'dealer-edit', component: DealerEditComponent },
   { path: 'service-center-permit', component: ServiceCenterPermitComponent },
   { path: 'ptpurchase', component: PTPurchasePermitComponent },
   { path: 'ptpurchase-edit', component: PTPurchaseEditComponent },
   { path: 'ptpossess', component: PTPossessPermitComponent },
-  { path: 'rsl', component: RslicenseComponent},
+  { path: 'ptpossess-edit', component: PTPossessEditComponent },
+  { path: 'rsl', component: RslicenseComponent },
+  { path: 'rsl-edit', component: RslEditComponent },
   { path: 'amateur', component: AmateurComponent },
+  { path: 'amateur-edit', component: AmateurEditComponent },
   { path: 'fphn', component: FphnComponent },
+  { path: 'fphn-edit', component: FphnEditComponent },
   { path: 'sphn', component: SphnComponent },
+  { path: 'sphn-edit', component: SphnEditComponent },
   { path: 'tphn', component: TphnComponent },
+  { path: 'tphn-edit', component: TphnEditComponent },
   { path: 'frtg', component: FRTGComponent },
+  { path: 'frtg-edit', component: FRTGEditComponent },
 ];

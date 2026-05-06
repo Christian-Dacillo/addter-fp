@@ -1,38 +1,25 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AmateurDataService, AmateurData } from './amateur-data.service';
 
 @Component({
   selector: 'app-amateur',
   standalone: true,
-  imports: [FormsModule],
   templateUrl: './amateur.component.html',
   styleUrls: ['./amateur.component.css']
 })
 export class AmateurComponent {
-  formData = {
-    licensee: '',
-    callSign: '',
-    licenseClass: '',
-    equipmentOne: '',
-    equipmentTwo: '',
-    equipmentThree: '',
-    address: '',
-    stationLocation: '',
-    validUntil: '',
-    issuedOn: '',
-    officialReceipt: '',
-    amount: '',
-    datePaid: '',
-    cashier: '',
-    signatoryLineone: '',
-    signatoryLinetwo: '',
-    ntcNumberOne: '',
-    ntcNumberTwo: '',
-    footerLineOne: '',
-    footerLineTwo: ''
-  };
+  data: AmateurData;
+
+  constructor(private dataService: AmateurDataService, private router: Router) {
+    this.data = this.dataService.data;
+  }
 
   print() {
     window.print();
+  }
+
+  goToEdit() {
+    this.router.navigate(['/amateur-edit']);
   }
 }
