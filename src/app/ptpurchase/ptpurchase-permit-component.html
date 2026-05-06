@@ -1,5 +1,7 @@
 <div class="toolbar no-print">
-  <button type="button" class="edit-button" (click)="goToEdit()">Back</button>
+  <button type="button" class="edit-button" (click)="goToEdit()">Edit</button>
+  <button type="button" class="print-button" (click)="print()">Print Permit</button>
+  <button type="button" class="print-data-button" (click)="printData()">Print Data</button>
 </div>
 
 <div class="print-container">
@@ -19,7 +21,7 @@
     </div>
 
     <div class="issued">
-      <span class="static-el">Issued:&nbsp;</span><span class="data-val">{{ data.issuedDate }}</span>
+      <span class="static-el">Issued:&nbsp;</span><span class="data-val">{{ data.dateProcessed }}</span>
     </div>
 
     <h2 class="title">
@@ -30,11 +32,11 @@
     <table class="form">
       <tr>
         <td class="label static-el">This is to certify that</td>
-        <td class="linee"><span class="data-val">{{ data.certifiedName }}</span></td>
+        <td class="linee"><span class="data-val">{{ data.applicant }}</span></td>
       </tr>
       <tr>
         <td class="label static-el">with postal address at</td>
-        <td class="linee"><span class="data-val">{{ data.postalAddress }}</span></td>
+        <td class="linee"><span class="data-val">{{ data.address }}</span></td>
       </tr>
     </table>
 
@@ -68,46 +70,45 @@
     <p class="paragraph static-el">
       This permit shall be valid as a provisional permit to possess unless sooner or cancelled.
     </p>
-    <br>
 
     <div class="row gap">
-      <span class="static-el"><b>Valid Until:&nbsp;</b></span><span class="data-val">{{ data.validUntil }}</span>
+      <span class="static-el"><b>Valid Until:&nbsp;</b></span><span class="data-val">{{ data.validity }}</span>
     </div>
 
     <div class="signature-section">
       <div class="section">
         <div class="or-section">
           <div class="or-left">
-            <p><span class="static-el">Official Receipt:&nbsp;</span><span class="data-val">{{ data.officialReceipt }}</span></p>
-            <p><span class="static-el">AMOUNT:&nbsp;</span><span class="data-val">{{ data.amount }}</span></p>
-            <p><span class="static-el">Date Paid:&nbsp;</span><span class="data-val">{{ data.datePaid }}</span></p>
-            <p><span class="static-el">Encoded By:&nbsp;</span><span class="data-val">{{ data.encodedBy }}</span></p>
+            <p class="or-row"><span class="static-el">Official Receipt:&nbsp;</span><span class="data-val">{{ data.officialReceipt }}</span></p>
+            <p class="or-row"><span class="static-el">AMOUNT:&nbsp;</span><span class="data-val">{{ data.amount }}</span></p>
+            <p class="or-row"><span class="static-el">Date Paid:&nbsp;</span><span class="data-val">{{ data.date }}</span></p>
+            <p class="or-row"><span class="static-el">Encoded By:&nbsp;</span><span class="data-val">{{ data.encoded }}</span></p>
 
             <p class="static-el">Intended use of requirement</p>
-            <p style="text-indent: 20px;">
-              <ng-container *ngIf="data.intendedUse === 'For New Radio station'; else notNew">
+            <p class="or-row" style="text-indent: 20px;">
+              <ng-container *ngIf="data.newRadio; else notNew">
                 <span class="data-val">(✓) For New Radio station</span>
               </ng-container>
               <ng-template #notNew><span class="static-el">( ) For New Radio station</span></ng-template>
             </p>
-            <p style="text-indent: 20px;">
-              <ng-container *ngIf="data.intendedUse === 'Additional Requirement Equipment'; else notAdditional">
+            <p class="or-row" style="text-indent: 20px;">
+              <ng-container *ngIf="data.additionalRadio; else notAdditional">
                 <span class="data-val">(✓) Additional Requirement Equipment</span>
               </ng-container>
               <ng-template #notAdditional><span class="static-el">( ) Additional Requirement Equipment</span></ng-template>
             </p>
-            <p style="text-indent: 20px;">
-              <ng-container *ngIf="data.intendedUse === 'Change of Equipment'; else notChange">
+            <p class="or-row" style="text-indent: 20px;">
+              <ng-container *ngIf="data.others; else notOthers">
                 <span class="data-val">(✓) Change of Equipment</span>
               </ng-container>
-              <ng-template #notChange><span class="static-el">( ) Change of Equipment</span></ng-template>
+              <ng-template #notOthers><span class="static-el">( ) Change of Equipment</span></ng-template>
             </p>
           </div>
         </div>
 
         <div class="signature static-el">
-          <p><b>ATTY. JUDY ANN N. BILANGEL</b></p>
-          <small>OIC Regional Director, RV</small>
+          <p><b>{{ data.approvingOfficer || 'ATTY. JUDY ANN N. BILANGEL' }}</b></p>
+          <small>{{ data.position || 'OIC Regional Director, RV' }}</small>
         </div>
       </div>
     </div>
@@ -117,7 +118,7 @@
       <p><strong>Notes:</strong></p>
       <ol>
         <li>Issuance of this permit is without prejudice to any administrative case filed against this station or may be filled for previously commited violator</li>
-        <li>Failure to submit application for permit to possess, radio construction Permit(if applicable) and/or application for Radio Station License within the validity of this PERMIT shall cause its cancellation and/or recall of the proposed frequency(ies). (Applicstion for PERMIT TO POSSESS and RADIO STATION LICENSE shall be filled only to NTC with corresponding invoice/source of equipment)</li>
+        <li>Failure to submit application for permit to possess, radio construction Permit(if applicable) and/or application for Radio Station License within the validity of this PERMIT shall cause its cancellation and/or recall of the proposed frequency(ies).</li>
         <li>The Above-described equipment shall not be installed, operated sold or transfer without prior authority from the National Telecommunications Commission.</li>
         <li>Any person who shall install and or operate said equipment without the authorization from the NATIONAL TELECOMMUNICATIONS COMMISSION shall be subject to the penal provisons of ACT no. 3846, as amended by a fine of not more than P2,000 or by imprisonment of not more than two years for each and every offense or both in the discretion of the court.</li>
         <li>Any firm, company, corporation or association failing or refusing to observe or violating any provion of this Act or any provison of the regulations prescribed by the NTC under this Act shall be punished by a fine of not more than P 5,000 for each and every offense.</li>

@@ -15,24 +15,15 @@ export class PTPossessEditComponent {
   form;
 
   constructor(private dataService: PTPossessDataService, private router: Router) {
-    this.form = {
-      ...this.dataService.data,
-      radioRows: this.dataService.data.radioRows.map(r => ({ ...r }))
-    };
+    this.form = { ...this.dataService.data };
   }
 
   submit() {
-    Object.assign(this.dataService.data, {
-      ...this.form,
-      radioRows: this.form.radioRows.map((r: any) => ({ ...r }))
-    });
+    Object.assign(this.dataService.data, this.form);
     this.router.navigate(['/ptpossess']);
   }
 
   cancel() {
-    this.form = {
-      ...this.dataService.data,
-      radioRows: this.dataService.data.radioRows.map(r => ({ ...r }))
-    };
+    this.form = { ...this.dataService.data };
   }
 }

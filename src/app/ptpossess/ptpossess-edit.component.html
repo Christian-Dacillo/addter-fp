@@ -8,14 +8,8 @@
         <p>Regional Office No. 5</p>
       </div>
     </div>
-
-    <div class="edit-header-title">
-      PERMIT TO POSSESS RADIO TRANSMITTER(S) / TRANSCEIVER(S)
-    </div>
-
-    <div class="tab-bar">
-      <span class="tab active">General</span>
-    </div>
+    <div class="edit-header-title">PERMIT TO POSSESS RADIO TRANSMITTER(S) / TRANSCEIVER(S)</div>
+    <div class="tab-bar"><span class="tab active">General</span></div>
 
     <form (ngSubmit)="submit()" #f="ngForm">
       <div class="form-grid">
@@ -24,106 +18,115 @@
           <label>Permit No</label>
           <input type="text" [(ngModel)]="form.permitNo" name="permitNo" placeholder="Permit No">
         </div>
-
         <div class="form-row">
-          <label>Issued Date</label>
-          <input type="text" [(ngModel)]="form.issuedDate" name="issuedDate" placeholder="Date Issued">
+          <label>Date Processed</label>
+          <input type="date" [(ngModel)]="form.dateProcessed" name="dateProcessed">
         </div>
-
         <div class="form-row full-width">
-          <label>Company / Applicant Name</label>
-          <input type="text" [(ngModel)]="form.companyName" name="companyName" placeholder="Company / Applicant Name">
+          <label>Applicant</label>
+          <input type="text" [(ngModel)]="form.applicant" name="applicant" placeholder="Applicant Name">
         </div>
-
         <div class="form-row full-width">
           <label>Address</label>
           <input type="text" [(ngModel)]="form.address" name="address" placeholder="Address">
         </div>
-
+        <div class="form-row">
+          <label>City / Municipality</label>
+          <input type="text" [(ngModel)]="form.cityMunicipality" name="cityMunicipality" placeholder="City/Municipality">
+        </div>
+        <div class="form-row">
+          <label>Province</label>
+          <input type="text" [(ngModel)]="form.province" name="province" placeholder="Province">
+        </div>
+        <div class="form-row">
+          <label>Call Sign</label>
+          <input type="text" [(ngModel)]="form.callSign" name="callSign" placeholder="Call Sign">
+        </div>
         <div class="form-row">
           <label>No of Units</label>
           <input type="text" [(ngModel)]="form.noOfUnits" name="noOfUnits" placeholder="No of Units">
         </div>
+        <div class="form-row">
+          <label>Unit Count</label>
+          <input type="number" [(ngModel)]="form.unitCount" name="unitCount" placeholder="Unit Count">
+        </div>
 
       </div>
 
-      <div class="section-title">Radio Details</div>
-      <table class="radio-table">
-        <thead>
-          <tr>
-            <th>Class of Station</th>
-            <th>Power (kW)</th>
-            <th>Equipment</th>
-            <th>Serial No</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of form.radioRows; let i = index">
-            <td><input type="text" [(ngModel)]="row.classOfStation" [name]="'class_'+i" placeholder="Class"></td>
-            <td><input type="text" [(ngModel)]="row.power" [name]="'power_'+i" placeholder="Power"></td>
-            <td><input type="text" [(ngModel)]="row.equipment" [name]="'equip_'+i" placeholder="Equipment"></td>
-            <td><input type="text" [(ngModel)]="row.serialNo" [name]="'serial_'+i" placeholder="Serial No"></td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- Make/Model/Type -->
+      <div class="section-title">Make / Model / Type</div>
+      <div class="form-grid">
+        <div class="form-row" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+          <label>Make/Model/Type {{ i }}</label>
+          <input type="text" [(ngModel)]="form['makeModel'+i]" [name]="'makeModel'+i" placeholder="Make/Model/Type {{ i }}">
+        </div>
+      </div>
 
-      <div class="form-grid" style="margin-top:12px">
+      <!-- Class of Station counts -->
+      <div class="section-title">Class of Station</div>
+      <div class="form-grid">
+        <div class="form-row"><label>FX</label><input type="number" [(ngModel)]="form.fx" name="fx" placeholder="FX"></div>
+        <div class="form-row"><label>FB</label><input type="number" [(ngModel)]="form.fb" name="fb" placeholder="FB"></div>
+        <div class="form-row"><label>FX and FB</label><input type="number" [(ngModel)]="form.fxAndFb" name="fxAndFb" placeholder="FX and FB"></div>
+        <div class="form-row"><label>ML</label><input type="number" [(ngModel)]="form.ml" name="ml" placeholder="ML"></div>
+        <div class="form-row"><label>P</label><input type="number" [(ngModel)]="form.p" name="p" placeholder="P"></div>
+        <div class="form-row"><label>Repeater</label><input type="number" [(ngModel)]="form.repeater" name="repeater" placeholder="Repeater"></div>
+      </div>
 
+      <!-- Serial Numbers -->
+      <div class="section-title">Serial Numbers</div>
+      <div class="form-grid">
+        <div class="form-row" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]">
+          <label>Serial {{ i }}</label>
+          <input type="text" [(ngModel)]="form['serial'+i]" [name]="'serial'+i" placeholder="Serial {{ i }}">
+        </div>
+      </div>
+
+      <!-- Technical Details -->
+      <div class="section-title">Technical Details</div>
+      <div class="form-grid">
         <div class="form-row full-width">
           <label>Frequency Range</label>
           <input type="text" [(ngModel)]="form.frequencyRange" name="frequencyRange" placeholder="Frequency Range">
         </div>
-
+        <div class="form-row full-width">
+          <label>RF Power Output</label>
+          <input type="text" [(ngModel)]="form.rfPowerOutput" name="rfPowerOutput" placeholder="RF Power Output">
+        </div>
         <div class="form-row full-width">
           <label>Source of Equipment</label>
           <input type="text" [(ngModel)]="form.sourceOfEquipment" name="sourceOfEquipment" placeholder="Source of Equipment">
         </div>
-
         <div class="form-row full-width">
           <label>Address of Source</label>
           <input type="text" [(ngModel)]="form.addressOfSource" name="addressOfSource" placeholder="Address of Source">
         </div>
-
         <div class="form-row full-width">
           <label>Permit to Purchase / Registration No</label>
           <input type="text" [(ngModel)]="form.permitToPurchaseNo" name="permitToPurchaseNo" placeholder="Permit to Purchase / Reg No">
         </div>
-
         <div class="form-row full-width">
           <label>Place of Storage</label>
           <input type="text" [(ngModel)]="form.placeOfStorage" name="placeOfStorage" placeholder="Place of Storage">
         </div>
-
         <div class="form-row full-width">
-          <label>Intended Use of Equipment (Class of Station)</label>
-          <input type="text" [(ngModel)]="form.intendedUse" name="intendedUse" placeholder="Intended Use">
+          <label>Intended Use</label>
+          <input type="text" [(ngModel)]="form.intended" name="intended" placeholder="Intended Use">
         </div>
+      </div>
 
-        <div class="form-row">
-          <label>Official Receipt</label>
-          <input type="text" [(ngModel)]="form.officialReceipt" name="officialReceipt" placeholder="Official Receipt">
-        </div>
-
-        <div class="form-row">
-          <label>Date Paid</label>
-          <input type="text" [(ngModel)]="form.datePaid" name="datePaid" placeholder="Date Paid">
-        </div>
-
-        <div class="form-row">
-          <label>Amount</label>
-          <input type="text" [(ngModel)]="form.amount" name="amount" placeholder="Amount">
-        </div>
-
-        <div class="form-row">
-          <label>Doc Stamp</label>
-          <input type="text" [(ngModel)]="form.docStamp" name="docStamp" placeholder="Doc Stamp">
-        </div>
-
-        <div class="form-row">
-          <label>Encoder</label>
-          <input type="text" [(ngModel)]="form.encoder" name="encoder" placeholder="Encoder">
-        </div>
-
+      <!-- Payment Details -->
+      <div class="section-title">Payment Details</div>
+      <div class="form-grid">
+        <div class="form-row"><label>Official Receipt</label><input type="number" [(ngModel)]="form.officialReceipt" name="officialReceipt" placeholder="OR No"></div>
+        <div class="form-row"><label>Date</label><input type="date" [(ngModel)]="form.date" name="date"></div>
+        <div class="form-row"><label>Possess Fee</label><input type="number" [(ngModel)]="form.possessFee" name="possessFee" placeholder="Possess Fee"></div>
+        <div class="form-row"><label>Filling Fee</label><input type="number" [(ngModel)]="form.fillingFee" name="fillingFee" placeholder="Filling Fee"></div>
+        <div class="form-row"><label>Doc Stamp</label><input type="number" [(ngModel)]="form.docStamp" name="docStamp" placeholder="Doc Stamp"></div>
+        <div class="form-row"><label>Total Amount</label><input type="number" [(ngModel)]="form.totalAmount" name="totalAmount" placeholder="Total Amount"></div>
+        <div class="form-row"><label>Total Possess Fee</label><input type="number" [(ngModel)]="form.totalPossessFee" name="totalPossessFee" placeholder="Total Possess Fee"></div>
+        <div class="form-row"><label>Encoded By</label><input type="text" [(ngModel)]="form.encoded" name="encoded" placeholder="Encoded By"></div>
+        <div class="form-row full-width"><label>Approving Officer</label><input type="text" [(ngModel)]="form.approvingOfficer" name="approvingOfficer" placeholder="Approving Officer"></div>
       </div>
 
       <div class="form-actions">

@@ -30,23 +30,23 @@
     <!-- LEFT -->
     <div class="left">
       <p class="field-line underlined-field">
-        <strong>LICENSEE:</strong> {{ data.licensee }}
+        <strong>LICENSEE:</strong> {{ data.firstName }} {{ data.middleName }} {{ data.lastName }}
       </p>
       <div class="field-row">
         <p class="field-line compact-field">
           <strong>CALL-SIGN:</strong> {{ data.callSign }}
         </p>
         <p class="field-line compact-field">
-          <strong>CLASS:</strong> {{ data.licenseClass }}
+          <strong>CLASS:</strong> {{ data.class }}
         </p>
       </div>
 
       <div class="equipment">
         <p class="equipment-label"><strong>AUTHORIZED EQUIPMENT:</strong></p>
         <div class="equip-box">
-          <div class="equip-item">{{ data.equipmentOne }}</div>
-          <div class="equip-item">{{ data.equipmentTwo }}</div>
-          <div class="equip-item">{{ data.equipmentThree }}</div>
+          <div class="equip-item">{{ data.equip1 }}</div>
+          <div class="equip-item">{{ data.equip2 }}</div>
+          <div class="equip-item">{{ data.equip3 }}</div>
         </div>
       </div>
     </div>
@@ -54,10 +54,10 @@
     <!-- RIGHT -->
     <div class="right">
       <p><strong>ADDRESS:</strong></p>
-      <p class="data-text">{{ data.address }}</p>
+      <p class="data-text">{{ data.address }}{{ data.addrBrgy ? ', ' + data.addrBrgy : '' }}{{ data.addrTown ? ', ' + data.addrTown : '' }}{{ data.addrProv ? ', ' + data.addrProv : '' }}</p>
 
       <p><strong>STATION LOCATION:</strong></p>
-      <p class="data-text">{{ data.stationLocation }}</p>
+      <p class="data-text">{{ data.stationLocationDetails }}{{ data.stationBrgy ? ', ' + data.stationBrgy : '' }}{{ data.stationTown ? ', ' + data.stationTown : '' }}{{ data.stationProv ? ', ' + data.stationProv : '' }}</p>
 
       <div class="signature">
         <p>SIGNATURE OF LICENSEE</p>
@@ -81,7 +81,7 @@
   <div class="issued">
     <div class="left">
       <p class="field-line">
-        <strong>ISSUED ON:</strong> {{ data.issuedOn }}
+        <strong>ISSUED ON:</strong> {{ data.dateIssued }}
       </p>
 
       <div class="receipt-box">
@@ -91,28 +91,27 @@
         <div class="receipt-cell">{{ data.amount }}</div>
         <div class="receipt-cell receipt-label">Date Paid:</div>
         <div class="receipt-cell">{{ data.datePaid }}</div>
-        <div class="receipt-cell receipt-label">Cashier:</div>
-        <div class="receipt-cell">{{ data.cashier }}</div>
+        <div class="receipt-cell receipt-label">Issued By:</div>
+        <div class="receipt-cell">{{ data.issuedBy }}</div>
       </div>
     </div>
 
     <div class="right">
       <p>NOTE: this is a computer generated No erasure Payment/ seal must be indicacted hereon this is not valid without signature/photo of licensee</p>
       <p>By Authority of the Commissioner:</p>
-      <p class="signatory-lineone">{{ data.signatoryLineone }}</p>
-      <p class="signatory-linetwo">{{ data.signatoryLinetwo }}</p>
+      <p class="signatory-lineone">{{ data.regionalDirector }}</p>
+      <p class="signatory-linetwo">Regional Director</p>
       <div class="ntc-row">
         <span>NTC No.</span>
-        <span class="ntc-value">{{ data.ntcNumberOne }}</span>
-        <span class="ntc-value">{{ data.ntcNumberTwo }}</span>
+        <span class="ntc-value">{{ data.registration }}</span>
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
-    <span class="footer-text">{{ data.footerLineOne }}</span>
-    <span class="footer-text">{{ data.footerLineTwo }}</span>
+    <span class="footer-text">{{ data.encodedBy }}</span>
+    <span class="footer-text">{{ data.routingRefNo }}</span>
   </div>
 
 </div>

@@ -13,14 +13,9 @@
     </div>
     <div class="tab-bar">
       <span class="tab active">General</span>
-      <div class="tab-actions">
-        <button type="button" class="tab-btn-print" (click)="printPermit()">Print</button>
-        <button type="button" class="tab-btn-data" (click)="printData()">Print Data</button>
-      </div>
     </div>
 
     <form (ngSubmit)="submit()" #f="ngForm">
-
       <div class="form-grid">
 
         <div class="form-row">
@@ -29,78 +24,118 @@
         </div>
 
         <div class="form-row">
-          <label>Issued Date</label>
-          <input type="text" [(ngModel)]="form.issuedDate" name="issuedDate" placeholder="Date Issued">
+          <label>Date Processed</label>
+          <input type="date" [(ngModel)]="form.dateProcessed" name="dateProcessed">
         </div>
 
-        <div class="form-row">
-          <label>Certified Name</label>
-          <input type="text" [(ngModel)]="form.certifiedName" name="certifiedName" placeholder="NAME">
+        <div class="form-row full-width">
+          <label>Applicant</label>
+          <input type="text" [(ngModel)]="form.applicant" name="applicant" placeholder="Applicant Name">
         </div>
 
-        <div class="form-row">
-          <label>Postal Address</label>
-          <input type="text" [(ngModel)]="form.postalAddress" name="postalAddress" placeholder="ADDRESS">
+        <div class="form-row full-width">
+          <label>Address</label>
+          <input type="text" [(ngModel)]="form.address" name="address" placeholder="Address">
         </div>
 
-        <div class="form-row">
+        <div class="form-row full-width">
           <label>Model</label>
-          <input type="text" [(ngModel)]="form.model" name="model" placeholder="MODEL">
+          <input type="text" [(ngModel)]="form.model" name="model" placeholder="Model">
         </div>
 
         <div class="form-row">
           <label>No of Units</label>
-          <input type="text" [(ngModel)]="form.noOfUnits" name="noOfUnits" placeholder="NO OF UNITS">
+          <input type="text" [(ngModel)]="form.noOfUnits" name="noOfUnits" placeholder="No of Units">
+        </div>
+
+        <div class="form-row">
+          <label>Unit Count</label>
+          <input type="number" [(ngModel)]="form.unitCount" name="unitCount" placeholder="Unit Count">
         </div>
 
         <div class="form-row">
           <label>Frequency Range</label>
-          <input type="text" [(ngModel)]="form.frequencyRange" name="frequencyRange" placeholder="FREQUENCY RANGE">
+          <input type="text" [(ngModel)]="form.frequencyRange" name="frequencyRange" placeholder="Frequency Range">
         </div>
 
         <div class="form-row">
           <label>Frequency Assignment</label>
-          <input type="text" [(ngModel)]="form.frequencyAssignment" name="frequencyAssignment" placeholder="FREQUENCY ASSIGNMENT">
+          <input type="text" [(ngModel)]="form.frequencyAssignment" name="frequencyAssignment" placeholder="Frequency Assignment">
         </div>
 
         <div class="form-row">
           <label>RF Power Output</label>
-          <input type="text" [(ngModel)]="form.rfPowerOutput" name="rfPowerOutput" placeholder="RF POWER OUTPUT">
+          <input type="text" [(ngModel)]="form.rfPowerOutput" name="rfPowerOutput" placeholder="RF Power Output">
         </div>
 
         <div class="form-row">
-          <label>Valid Until</label>
-          <input type="text" [(ngModel)]="form.validUntil" name="validUntil" placeholder="Valid Until">
+          <label>Validity</label>
+          <input type="date" [(ngModel)]="form.validity" name="validity">
+        </div>
+
+        <div class="form-row">
+          <label>Extension</label>
+          <input type="date" [(ngModel)]="form.extension" name="extension">
+        </div>
+
+        <div class="form-row">
+          <label>Released</label>
+          <input type="date" [(ngModel)]="form.released" name="released">
         </div>
 
         <div class="form-row">
           <label>Official Receipt</label>
-          <input type="text" [(ngModel)]="form.officialReceipt" name="officialReceipt" placeholder="Official Receipt">
+          <input type="number" [(ngModel)]="form.officialReceipt" name="officialReceipt" placeholder="OR No">
         </div>
 
         <div class="form-row">
           <label>Amount</label>
-          <input type="text" [(ngModel)]="form.amount" name="amount" placeholder="Amount">
+          <input type="number" [(ngModel)]="form.amount" name="amount" placeholder="Amount">
         </div>
 
         <div class="form-row">
           <label>Date Paid</label>
-          <input type="text" [(ngModel)]="form.datePaid" name="datePaid" placeholder="Date Paid">
+          <input type="date" [(ngModel)]="form.date" name="date">
         </div>
 
         <div class="form-row">
           <label>Encoded By</label>
-          <input type="text" [(ngModel)]="form.encodedBy" name="encodedBy" placeholder="Encoded By">
+          <input type="text" [(ngModel)]="form.encoded" name="encoded" placeholder="Encoded By">
         </div>
 
         <div class="form-row full-width">
-          <label>Intended Use</label>
-          <select [(ngModel)]="form.intendedUse" name="intendedUse">
-            <option value="">-- Select --</option>
-            <option value="For New Radio station">For New Radio station</option>
-            <option value="Additional Requirement Equipment">Additional Requirement Equipment</option>
-            <option value="Change of Equipment">Change of Equipment</option>
-          </select>
+          <label>Approving Officer</label>
+          <input type="text" [(ngModel)]="form.approvingOfficer" name="approvingOfficer" placeholder="Approving Officer">
+        </div>
+
+        <div class="form-row">
+          <label>Position</label>
+          <input type="text" [(ngModel)]="form.position" name="position" placeholder="Position">
+        </div>
+
+        <div class="form-row">
+          <label>For New</label>
+          <input type="text" [(ngModel)]="form.forNew" name="forNew" placeholder="For New">
+        </div>
+
+        <div class="form-row">
+          <label>Additional</label>
+          <input type="text" [(ngModel)]="form.additional" name="additional" placeholder="Additional">
+        </div>
+
+        <div class="form-row">
+          <label>Others</label>
+          <input type="text" [(ngModel)]="form.others" name="others" placeholder="Others">
+        </div>
+
+        <div class="form-row">
+          <label>New Radio</label>
+          <input type="text" [(ngModel)]="form.newRadio" name="newRadio" placeholder="New Radio">
+        </div>
+
+        <div class="form-row">
+          <label>Additional Radio</label>
+          <input type="text" [(ngModel)]="form.additionalRadio" name="additionalRadio" placeholder="Additional Radio">
         </div>
 
       </div>

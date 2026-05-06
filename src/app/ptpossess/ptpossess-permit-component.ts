@@ -13,6 +13,17 @@ import { PTPossessDataService, PTPossessData } from './ptpossess-data.service';
 export class PTPossessPermitComponent {
   data: PTPossessData;
 
+  get makeModels(): string[] {
+    return [1,2,3,4,5,6,7,8,9,10]
+      .map(i => (this.data as any)['makeModel'+i])
+      .filter((v: string) => v);
+  }
+
+  get serials(): string[] {
+    return Array.from({length: 25}, (_, i) => (this.data as any)['serial'+(i+1)])
+      .filter((v: string) => v);
+  }
+
   constructor(private dataService: PTPossessDataService, private router: Router) {
     this.data = this.dataService.data;
   }

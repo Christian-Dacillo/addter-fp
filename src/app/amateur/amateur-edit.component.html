@@ -8,119 +8,114 @@
         <p>Quezon City, Metro Manila</p>
       </div>
     </div>
-
-    <div class="edit-header-title">
-      OPERATOR CERTIFICATES / STATION LICENSE FOR AMATEUR
-    </div>
-
-    <div class="tab-bar">
-      <span class="tab active">General</span>
-    </div>
+    <div class="edit-header-title">OPERATOR CERTIFICATES / STATION LICENSE FOR AMATEUR</div>
+    <div class="tab-bar"><span class="tab active">General</span></div>
 
     <form (ngSubmit)="submit()" #f="ngForm">
+
+      <!-- Personal Info -->
+      <div class="section-title">Personal Information</div>
       <div class="form-grid">
-
-        <div class="form-row full-width">
-          <label>Licensee</label>
-          <input type="text" [(ngModel)]="form.licensee" name="licensee" placeholder="Licensee Name">
-        </div>
-
-        <div class="form-row">
-          <label>Call Sign</label>
-          <input type="text" [(ngModel)]="form.callSign" name="callSign" placeholder="Call Sign">
-        </div>
-
-        <div class="form-row">
-          <label>Class</label>
-          <input type="text" [(ngModel)]="form.licenseClass" name="licenseClass" placeholder="License Class">
-        </div>
-
-        <div class="form-row">
-          <label>Equipment 1</label>
-          <input type="text" [(ngModel)]="form.equipmentOne" name="equipmentOne" placeholder="Equipment 1">
-        </div>
-
-        <div class="form-row">
-          <label>Equipment 2</label>
-          <input type="text" [(ngModel)]="form.equipmentTwo" name="equipmentTwo" placeholder="Equipment 2">
-        </div>
-
-        <div class="form-row full-width">
-          <label>Equipment 3</label>
-          <input type="text" [(ngModel)]="form.equipmentThree" name="equipmentThree" placeholder="Equipment 3">
-        </div>
-
-        <div class="form-row full-width">
-          <label>Address</label>
-          <input type="text" [(ngModel)]="form.address" name="address" placeholder="Address">
-        </div>
-
-        <div class="form-row full-width">
-          <label>Station Location</label>
-          <input type="text" [(ngModel)]="form.stationLocation" name="stationLocation" placeholder="Station Location">
-        </div>
-
-        <div class="form-row">
-          <label>Valid Until</label>
-          <input type="text" [(ngModel)]="form.validUntil" name="validUntil" placeholder="Valid Until">
-        </div>
-
-        <div class="form-row">
-          <label>Issued On</label>
-          <input type="text" [(ngModel)]="form.issuedOn" name="issuedOn" placeholder="Issue Date">
-        </div>
-
-        <div class="form-row">
-          <label>Official Receipt</label>
-          <input type="text" [(ngModel)]="form.officialReceipt" name="officialReceipt" placeholder="Receipt No">
-        </div>
-
-        <div class="form-row">
-          <label>Amount</label>
-          <input type="text" [(ngModel)]="form.amount" name="amount" placeholder="Amount">
-        </div>
-
-        <div class="form-row">
-          <label>Date Paid</label>
-          <input type="text" [(ngModel)]="form.datePaid" name="datePaid" placeholder="Date Paid">
-        </div>
-
-        <div class="form-row">
-          <label>Cashier</label>
-          <input type="text" [(ngModel)]="form.cashier" name="cashier" placeholder="Cashier">
-        </div>
-
-        <div class="form-row">
-          <label>Signatory Name</label>
-          <input type="text" [(ngModel)]="form.signatoryLineone" name="signatoryLineone" placeholder="Regional Director Name">
-        </div>
-
-        <div class="form-row">
-          <label>Signatory Position</label>
-          <input type="text" [(ngModel)]="form.signatoryLinetwo" name="signatoryLinetwo" placeholder="Position">
-        </div>
-
-        <div class="form-row">
-          <label>NTC No. (1)</label>
-          <input type="text" [(ngModel)]="form.ntcNumberOne" name="ntcNumberOne" placeholder="NTC No. 1">
-        </div>
-
-        <div class="form-row">
-          <label>NTC No. (2)</label>
-          <input type="text" [(ngModel)]="form.ntcNumberTwo" name="ntcNumberTwo" placeholder="NTC No. 2">
-        </div>
-
-        <div class="form-row full-width">
-          <label>Footer Line 1</label>
-          <input type="text" [(ngModel)]="form.footerLineOne" name="footerLineOne" placeholder="Footer Line 1">
-        </div>
-
-        <div class="form-row full-width">
-          <label>Footer Line 2</label>
-          <input type="text" [(ngModel)]="form.footerLineTwo" name="footerLineTwo" placeholder="Footer Line 2">
-        </div>
-
+        <div class="form-row"><label>Type</label><input type="text" [(ngModel)]="form.type" name="type" placeholder="Type"></div>
+        <div class="form-row"><label>Licensee</label><input type="text" [(ngModel)]="form.licensee" name="licensee" placeholder="Licensee"></div>
+        <div class="form-row"><label>First Name</label><input type="text" [(ngModel)]="form.firstName" name="firstName" placeholder="First Name"></div>
+        <div class="form-row"><label>Middle Name</label><input type="text" [(ngModel)]="form.middleName" name="middleName" placeholder="Middle Name"></div>
+        <div class="form-row"><label>Last Name</label><input type="text" [(ngModel)]="form.lastName" name="lastName" placeholder="Last Name"></div>
+        <div class="form-row"><label>Birthdate</label><input type="date" [(ngModel)]="form.birthdate" name="birthdate"></div>
+        <div class="form-row"><label>Gender</label><select [(ngModel)]="form.gender" name="gender"><option value="">-- Select --</option><option value="Male">Male</option><option value="Female">Female</option></select></div>
+        <div class="form-row"><label>Citizenship</label><input type="text" [(ngModel)]="form.citizenship" name="citizenship" placeholder="Citizenship"></div>
+        <div class="form-row"><label>Height</label><input type="text" [(ngModel)]="form.height" name="height" placeholder="Height"></div>
+        <div class="form-row"><label>Weight</label><input type="text" [(ngModel)]="form.weight" name="weight" placeholder="Weight"></div>
+        <div class="form-row"><label>Employer</label><input type="text" [(ngModel)]="form.employer" name="employer" placeholder="Employer"></div>
+        <div class="form-row"><label>Amateur Club</label><input type="text" [(ngModel)]="form.amateurClub" name="amateurClub" placeholder="Amateur Club"></div>
       </div>
+
+      <!-- Address -->
+      <div class="section-title">Address</div>
+      <div class="form-grid">
+        <div class="form-row full-width"><label>Address</label><input type="text" [(ngModel)]="form.address" name="address" placeholder="Full Address"></div>
+        <div class="form-row"><label>Barangay</label><input type="text" [(ngModel)]="form.addrBrgy" name="addrBrgy" placeholder="Barangay"></div>
+        <div class="form-row"><label>Town / City</label><input type="text" [(ngModel)]="form.addrTown" name="addrTown" placeholder="Town/City"></div>
+        <div class="form-row"><label>Province</label><input type="text" [(ngModel)]="form.addrProv" name="addrProv" placeholder="Province"></div>
+      </div>
+
+      <!-- Station Location -->
+      <div class="section-title">Station Location</div>
+      <div class="form-grid">
+        <div class="form-row full-width"><label>Station Location Details</label><input type="text" [(ngModel)]="form.stationLocationDetails" name="stationLocationDetails" placeholder="Station Location Details"></div>
+        <div class="form-row"><label>Station Barangay</label><input type="text" [(ngModel)]="form.stationBrgy" name="stationBrgy" placeholder="Barangay"></div>
+        <div class="form-row"><label>Station Town / City</label><input type="text" [(ngModel)]="form.stationTown" name="stationTown" placeholder="Town/City"></div>
+        <div class="form-row"><label>Station Province</label><input type="text" [(ngModel)]="form.stationProv" name="stationProv" placeholder="Province"></div>
+      </div>
+
+      <!-- License Info -->
+      <div class="section-title">License Information</div>
+      <div class="form-grid">
+        <div class="form-row"><label>Registration</label><input type="text" [(ngModel)]="form.registration" name="registration" placeholder="Registration No"></div>
+        <div class="form-row"><label>Call Sign</label><input type="text" [(ngModel)]="form.callSign" name="callSign" placeholder="Call Sign"></div>
+        <div class="form-row"><label>Call Sign Letter</label><input type="text" [(ngModel)]="form.callSignLetter" name="callSignLetter" placeholder="Call Sign Letter"></div>
+        <div class="form-row"><label>Class</label><input type="text" [(ngModel)]="form.class" name="class" placeholder="Class"></div>
+        <div class="form-row"><label>Valid From</label><input type="date" [(ngModel)]="form.validFrom" name="validFrom"></div>
+        <div class="form-row"><label>Valid Until</label><input type="date" [(ngModel)]="form.validUntil" name="validUntil"></div>
+        <div class="form-row"><label>Date Issued</label><input type="date" [(ngModel)]="form.dateIssued" name="dateIssued"></div>
+        <div class="form-row"><label>Regional Director</label><input type="text" [(ngModel)]="form.regionalDirector" name="regionalDirector" placeholder="Regional Director"></div>
+        <div class="form-row"><label>Status</label><input type="text" [(ngModel)]="form.status" name="status" placeholder="Status"></div>
+        <div class="form-row"><label>Modification</label><input type="text" [(ngModel)]="form.modification" name="modification" placeholder="Modification"></div>
+        <div class="form-row"><label>Routing Ref No</label><input type="text" [(ngModel)]="form.routingRefNo" name="routingRefNo" placeholder="Routing Ref No"></div>
+        <div class="form-row"><label>Serial</label><input type="number" [(ngModel)]="form.serial" name="serial" placeholder="Serial"></div>
+      </div>
+
+      <!-- Exam Info -->
+      <div class="section-title">Examination</div>
+      <div class="form-grid">
+        <div class="form-row"><label>Exam Date</label><input type="date" [(ngModel)]="form.examDate" name="examDate"></div>
+        <div class="form-row"><label>Exam Taken</label><input type="text" [(ngModel)]="form.examTaken" name="examTaken" placeholder="Exam Taken"></div>
+        <div class="form-row"><label>Exam Remark</label><input type="text" [(ngModel)]="form.examRemark" name="examRemark" placeholder="Exam Remark"></div>
+        <div class="form-row"><label>Average</label><input type="text" [(ngModel)]="form.ave" name="ave" placeholder="Average"></div>
+        <div class="form-row"><label>Elem 2</label><input type="number" [(ngModel)]="form.elem2" name="elem2" placeholder="Elem 2"></div>
+        <div class="form-row"><label>Elem 3</label><input type="number" [(ngModel)]="form.elem3" name="elem3" placeholder="Elem 3"></div>
+        <div class="form-row"><label>Elem 4</label><input type="number" [(ngModel)]="form.elem4" name="elem4" placeholder="Elem 4"></div>
+        <div class="form-row"><label>Elem 5</label><input type="number" [(ngModel)]="form.elem5" name="elem5" placeholder="Elem 5"></div>
+        <div class="form-row"><label>Elem 6</label><input type="number" [(ngModel)]="form.elem6" name="elem6" placeholder="Elem 6"></div>
+        <div class="form-row"><label>Elem 7</label><input type="number" [(ngModel)]="form.elem7" name="elem7" placeholder="Elem 7"></div>
+      </div>
+
+      <!-- Payment -->
+      <div class="section-title">Payment</div>
+      <div class="form-grid">
+        <div class="form-row"><label>Official Receipt</label><input type="number" [(ngModel)]="form.officialReceipt" name="officialReceipt" placeholder="OR No"></div>
+        <div class="form-row"><label>Amount</label><input type="number" [(ngModel)]="form.amount" name="amount" placeholder="Amount"></div>
+        <div class="form-row"><label>Date Paid</label><input type="date" [(ngModel)]="form.datePaid" name="datePaid"></div>
+        <div class="form-row"><label>Issued By</label><input type="text" [(ngModel)]="form.issuedBy" name="issuedBy" placeholder="Issued By"></div>
+        <div class="form-row"><label>OR 2</label><input type="number" [(ngModel)]="form.officialReceipt2" name="officialReceipt2" placeholder="OR No 2"></div>
+        <div class="form-row"><label>Amount 2</label><input type="number" [(ngModel)]="form.amount2" name="amount2" placeholder="Amount 2"></div>
+        <div class="form-row"><label>Date Paid 2</label><input type="date" [(ngModel)]="form.datePaid2" name="datePaid2"></div>
+        <div class="form-row"><label>OR 3</label><input type="number" [(ngModel)]="form.officialReceipt3" name="officialReceipt3" placeholder="OR No 3"></div>
+        <div class="form-row"><label>Amount 3</label><input type="number" [(ngModel)]="form.amount3" name="amount3" placeholder="Amount 3"></div>
+        <div class="form-row"><label>Date Paid 3</label><input type="date" [(ngModel)]="form.datePaid3" name="datePaid3"></div>
+      </div>
+
+      <!-- Processing -->
+      <div class="section-title">Processing</div>
+      <div class="form-grid">
+        <div class="form-row"><label>Date Received</label><input type="date" [(ngModel)]="form.dateReceived" name="dateReceived"></div>
+        <div class="form-row"><label>Release Date</label><input type="date" [(ngModel)]="form.releaseDate" name="releaseDate"></div>
+        <div class="form-row"><label>Encoded By</label><input type="text" [(ngModel)]="form.encodedBy" name="encodedBy" placeholder="Encoded By"></div>
+        <div class="form-row"><label>Last Modified</label><input type="text" [(ngModel)]="form.lastModified" name="lastModified" placeholder="Last Modified"></div>
+      </div>
+
+      <!-- Equipment (40 pairs) -->
+      <div class="section-title">Authorized Equipment</div>
+      <table class="equip-table">
+        <thead><tr><th>#</th><th>Equipment</th><th>Serial No</th></tr></thead>
+        <tbody>
+          <tr *ngFor="let i of equipNums">
+            <td>{{ i }}</td>
+            <td><input type="text" [(ngModel)]="form['equip'+i]" [name]="'equip'+i" placeholder="Equipment {{ i }}"></td>
+            <td><input type="text" [(ngModel)]="form['serial'+i]" [name]="'serial'+i" placeholder="Serial {{ i }}"></td>
+          </tr>
+        </tbody>
+      </table>
 
       <div class="form-actions">
         <button type="button" class="btn-cancel" (click)="cancel()">Cancel</button>

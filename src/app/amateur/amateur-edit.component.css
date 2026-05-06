@@ -112,3 +112,48 @@ input:focus { outline: 2px solid #1a3a5c; }
   border-radius: 6px;
 }
 .btn-submit:hover { background: #122840; }
+
+.section-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #1a3a5c;
+  margin: 14px 0 6px;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 4px;
+}
+
+.equip-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+}
+
+.equip-table th {
+  background: #d0dce8;
+  font-size: 11px;
+  padding: 5px 6px;
+  text-align: left;
+  border: 1px solid #aaa;
+}
+
+.equip-table td {
+  border: 1px solid #aaa;
+  padding: 2px 4px;
+  font-size: 12px;
+}
+
+.equip-table td:first-child {
+  width: 30px;
+  text-align: center;
+  color: #666;
+}
+
+.equip-table td input {
+  border: none;
+  padding: 4px 6px;
+  font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.equip-table td input:focus { outline: 2px solid #1a3a5c; }

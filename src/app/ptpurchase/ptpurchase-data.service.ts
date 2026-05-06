@@ -1,40 +1,60 @@
 import { Injectable } from '@angular/core';
 
 export interface PTPurchaseData {
-  permitNo: string;
-  issuedDate: string;
-  certifiedName: string;
-  postalAddress: string;
-  model: string;
-  noOfUnits: string;
-  frequencyRange: string;
-  frequencyAssignment: string;
-  rfPowerOutput: string;
-  validUntil: string;
-  officialReceipt: string;
-  amount: string;
-  datePaid: string;
-  encodedBy: string;
-  intendedUse: string;
+  id: number;                        // int NOT NULL
+  permitNo: string;                  // nvarchar
+  applicant: string;                 // nvarchar
+  address: string;                   // nvarchar
+  dateProcessed: string;             // datetime
+  model: string;                     // nvarchar
+  noOfUnits: string;                 // nvarchar
+  frequencyRange: string;            // nvarchar
+  rfPowerOutput: string;             // nvarchar
+  officialReceipt: number | null;    // decimal(18,0)
+  amount: number | null;             // money
+  date: string;                      // datetime
+  encoded: string;                   // nvarchar
+  released: string;                  // datetime
+  approvingOfficer: string;          // nvarchar
+  frequencyAssignment: string;       // nvarchar
+  forNew: string;                    // nvarchar
+  additional: string;                // nvarchar
+  others: string;                    // nvarchar
+  validity: string;                  // datetime
+  extension: string;                 // datetime
+  position: string;                  // nvarchar
+  newRadio: string;                  // nvarchar
+  additionalRadio: string;           // nvarchar
+  unitCount: number | null;          // int
 }
 
 @Injectable({ providedIn: 'root' })
 export class PTPurchaseDataService {
   data: PTPurchaseData = {
+    id: 0,
     permitNo: '',
-    issuedDate: '',
-    certifiedName: '',
-    postalAddress: '',
+    applicant: '',
+    address: '',
+    dateProcessed: '',
     model: '',
     noOfUnits: '',
     frequencyRange: '',
-    frequencyAssignment: '',
     rfPowerOutput: '',
-    validUntil: '',
-    officialReceipt: '',
-    amount: '',
-    datePaid: '',
-    encodedBy: '',
-    intendedUse: '',
+    officialReceipt: null,
+    amount: null,
+    date: '',
+    encoded: '',
+    released: '',
+    approvingOfficer: '',
+    frequencyAssignment: '',
+    forNew: '',
+    additional: '',
+    others: '',
+    validity: '',
+    extension: '',
+    position: '',
+    newRadio: '',
+    additionalRadio: '',
+    unitCount: null,
   };
 }
