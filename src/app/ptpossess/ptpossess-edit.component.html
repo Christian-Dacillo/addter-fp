@@ -9,7 +9,12 @@
       </div>
     </div>
     <div class="edit-header-title">PERMIT TO POSSESS RADIO TRANSMITTER(S) / TRANSCEIVER(S)</div>
-    <div class="tab-bar"><span class="tab active">General</span></div>
+    <div class="tab-bar">
+      <span class="tab active">General</span>
+      <div class="tab-actions">
+        <button type="button" class="tab-btn-print" (click)="printPermit()">Print</button>
+      </div>
+    </div>
 
     <form (ngSubmit)="submit()" #f="ngForm">
       <div class="form-grid">

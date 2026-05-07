@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { PTPossessDataService, PTPossessData } from './ptpossess-data.service';
 
 @Component({
   selector: 'app-ptpossess-permit',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   templateUrl: './ptpossess-permit-component.html',
   styleUrls: ['./ptpossess-permit-component.css']
 })

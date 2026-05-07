@@ -12,7 +12,7 @@ import { PTPossessDataService } from './ptpossess-data.service';
   styleUrls: ['./ptpossess-edit.component.css']
 })
 export class PTPossessEditComponent {
-  form;
+  form: any;
 
   constructor(private dataService: PTPossessDataService, private router: Router) {
     this.form = { ...this.dataService.data };
@@ -23,7 +23,6 @@ export class PTPossessEditComponent {
     this.router.navigate(['/ptpossess']);
   }
 
-  cancel() {
-    this.form = { ...this.dataService.data };
-  }
+  cancel() { this.form = { ...this.dataService.data }; }
+  printPermit() { Object.assign(this.dataService.data, this.form); this.router.navigate(['/ptpossess']).then(() => setTimeout(() => window.print(), 300)); }
 }

@@ -139,3 +139,26 @@ input:focus {
 }
 
 .btn-submit:hover { background: #122840; }
+
+.tab-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tab-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.tab-btn-print {
+  background: #1a3a5c;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.tab-btn-print:hover { background: #122840; }

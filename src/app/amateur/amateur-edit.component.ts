@@ -12,7 +12,7 @@ import { AmateurDataService } from './amateur-data.service';
   styleUrls: ['./amateur-edit.component.css']
 })
 export class AmateurEditComponent {
-  form;
+  form: any;
   equipNums = Array.from({length: 40}, (_, i) => i + 1);
 
   constructor(private dataService: AmateurDataService, private router: Router) {
@@ -26,5 +26,12 @@ export class AmateurEditComponent {
 
   cancel() {
     this.form = { ...this.dataService.data };
+  }
+
+  printPermit() {
+    Object.assign(this.dataService.data, this.form);
+    this.router.navigate(['/amateur']).then(() => {
+      setTimeout(() => window.print(), 300);
+    });
   }
 }

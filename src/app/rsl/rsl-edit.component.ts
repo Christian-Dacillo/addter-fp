@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RslDataService } from './rsl-data.service';
@@ -8,7 +8,8 @@ import { RslDataService } from './rsl-data.service';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './rsl-edit.component.html',
-  styleUrls: ['./rsl-edit.component.css']
+  styleUrls: ['./rsl-edit.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class RslEditComponent {
   form;
@@ -22,7 +23,6 @@ export class RslEditComponent {
     this.router.navigate(['/rsl']);
   }
 
-  cancel() {
-    this.form = { ...this.dataService.data };
-  }
+  cancel() { this.form = { ...this.dataService.data }; }
+  printPermit() { Object.assign(this.dataService.data, this.form); this.router.navigate(['/rsl']).then(() => setTimeout(() => window.print(), 300)); }
 }

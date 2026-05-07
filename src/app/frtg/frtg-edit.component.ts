@@ -22,7 +22,6 @@ export class FRTGEditComponent {
     this.router.navigate(['/frtg']);
   }
 
-  cancel() {
-    this.form = { ...this.dataService.data };
-  }
+  cancel() { this.form = { ...this.dataService.data }; }
+  printPermit() { Object.assign(this.dataService.data, this.form); this.router.navigate(['/frtg']).then(() => setTimeout(() => window.print(), 300)); }
 }

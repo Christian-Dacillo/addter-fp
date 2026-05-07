@@ -22,7 +22,6 @@ export class SphnEditComponent {
     this.router.navigate(['/sphn']);
   }
 
-  cancel() {
-    this.form = { ...this.dataService.data };
-  }
+  cancel() { this.form = { ...this.dataService.data }; }
+  printPermit() { Object.assign(this.dataService.data, this.form); this.router.navigate(['/sphn']).then(() => setTimeout(() => window.print(), 300)); }
 }

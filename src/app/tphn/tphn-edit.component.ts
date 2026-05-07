@@ -22,7 +22,6 @@ export class TphnEditComponent {
     this.router.navigate(['/tphn']);
   }
 
-  cancel() {
-    this.form = { ...this.dataService.data };
-  }
+  cancel() { this.form = { ...this.dataService.data }; }
+  printPermit() { Object.assign(this.dataService.data, this.form); this.router.navigate(['/tphn']).then(() => setTimeout(() => window.print(), 300)); }
 }

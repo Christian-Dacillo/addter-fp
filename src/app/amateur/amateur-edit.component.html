@@ -9,7 +9,12 @@
       </div>
     </div>
     <div class="edit-header-title">OPERATOR CERTIFICATES / STATION LICENSE FOR AMATEUR</div>
-    <div class="tab-bar"><span class="tab active">General</span></div>
+    <div class="tab-bar">
+      <span class="tab active">General</span>
+      <div class="tab-actions">
+        <button type="button" class="tab-btn-print" (click)="printPermit()">Print</button>
+      </div>
+    </div>
 
     <form (ngSubmit)="submit()" #f="ngForm">
 

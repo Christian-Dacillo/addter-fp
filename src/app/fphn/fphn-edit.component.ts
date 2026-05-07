@@ -22,7 +22,6 @@ export class FphnEditComponent {
     this.router.navigate(['/fphn']);
   }
 
-  cancel() {
-    this.form = { ...this.dataService.data };
-  }
+  cancel() { this.form = { ...this.dataService.data }; }
+  printPermit() { Object.assign(this.dataService.data, this.form); this.router.navigate(['/fphn']).then(() => setTimeout(() => window.print(), 300)); }
 }
